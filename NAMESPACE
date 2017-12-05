@@ -3,6 +3,8 @@
 export(ellipse)
 export(niche.par.plot)
 export(niche.plot)
+export(niche.runif)
+export(niche.size)
 export(niiw.post)
 export(niw.coeffs)
 export(niw.mom)
