@@ -1,8 +1,8 @@
 Package: nicheROVER
 Title: (Niche) (R)egion and Niche (Over)lap Metrics for
         Multidimensional Ecological Niches
-Version: 1.0
-Date: 2014-07-21
+Version: 1.0.0.9000
+Date: 2017-12-05
 Authors@R: c(person("Martin", "Lysy", role = c("aut", "cre"),
     email = "mlysy@uwaterloo.ca"),
     person("Ashley D.", "Stasko", role = c("aut", "ctb")),
@@ -30,3 +30,4 @@ Author: Martin Lysy [aut, cre],
   Ashley D. Stasko [aut, ctb],
   Heidi K. Swanson [aut, ctb]
 Maintainer: Martin Lysy <mlysy@uwaterloo.ca>
+RoxygenNote: 6.0.1

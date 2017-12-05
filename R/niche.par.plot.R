@@ -1,5 +1,47 @@
-niche.par.plot <-
-function(niche.par, plot.mu = TRUE, plot.Sigma = TRUE, plot.index,
+#'@title Plot for niche parameters
+#'
+#'@description For one or more species, plots some or all of the niche parameters \eqn{\mu} and \eqn{\Sigma}.
+#'@param niche.par list with \code{nspecies = length(niche.par)}, each element of which is a list with parameters \code{mu} and \code{Sigma}.  See Details.
+#'@param plot.mu logical.  If \code{TRUE}, plot the distribution of \eqn{\mu} for each niche indicator (e.g., stable isotope).  See Details.
+#'@param plot.Sigma logical.  If \code{TRUE}, plot the distribution of \eqn{\Sigma} for each niche indicator.  See Details.
+#'@param plot.index either a scalar of a numeric vector of length 2.  If \code{plot.index = i} then plot the distribution of \eqn{\mu_i}.  If \code{plot.index = c(i,j)} then plot the distribution of \eqn{\Sigma_{ij}}.
+#'@param col vector of colors in which to plot each species.
+#'@param ndens number of points at which to evaluate density estimates.
+#'@param ylab optional label for \eqn{y}-axis.  If missing, defaults to \eqn{p(\mu_i | X)} and \eqn{p(\Sigma_{ij} | X)}.
+#'@details \code{niche.par} is a list, each element of which is a distribution of niche parameters.  That is, \code{names(niche.par[[1]]) = c("mu", "Sigma")}, and if \code{niso} is the number of niche indicators (e.g., stable isotopes), then \code{dim(niche.par[[1]]$mu) = c(nsamples, niso)} and \code{dim(niche.par[[1]]$Sigma) = c(niso, niso, nsamples)}.
+#'@seealso \code{\link{niw.post}}, \code{\link{niiw.post}} for niche parameter output, \code{density} in the \code{R} \code{base} package for density estimation from sample data.
+#'@return Returns a plot of the distribution of some or all niche parameters.
+#'@examples
+#'# fish data
+#'data(fish)
+#'
+#'# generate parameter draws from the "default" posteriors of each fish
+#'nsamples <- 1e3
+#'system.time({
+#'  fish.par <- tapply(1:nrow(fish), fish$species,
+#'                     function(ii) niw.post(nsamples = nsamples, X = fish[ii,2:4]))
+#'})
+#'
+#'# various parameter plots
+#'clrs <- c("black", "red", "blue", "orange") # colors for each species
+#'
+#'# mu1, mu2, and Sigma12
+#'par(mar = c(4, 4, .5, .1)+.1, mfrow = c(1,3))
+#'niche.par.plot(fish.par, col = clrs, plot.index = 1)
+#'niche.par.plot(fish.par, col = clrs, plot.index = 2)
+#'niche.par.plot(fish.par, col = clrs, plot.index = 1:2)
+#'legend("topright", legend = names(fish.par), fill = clrs)
+#'
+#'# all mu
+#'niche.par.plot(fish.par, col = clrs, plot.mu = TRUE, plot.Sigma = FALSE)
+#'legend("topright", legend = names(fish.par), fill = clrs)
+#'
+#'# all mu and Sigma
+#'par(mar = c(4.2, 4.2, 2, 1)+.1)
+#'niche.par.plot(fish.par, col = clrs, plot.mu = TRUE, plot.Sigma = TRUE)
+#'legend("topright", legend = names(fish.par), fill = clrs)
+#'@export
+niche.par.plot <- function(niche.par, plot.mu = TRUE, plot.Sigma = TRUE, plot.index,
                            col, ndens = 512, ylab) {
   niso <- ncol(niche.par[[1]]$mu)
   nsmp <- length(niche.par)
