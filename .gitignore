@@ -1,0 +1,8 @@
+*.DS_Store
+*.Rapp.history
+*.Rhistory
+*.o
+*.so
+*.dll
+*.pdf
+vignettes/.build.timestamp

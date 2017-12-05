@@ -1,0 +1,32 @@
+Package: nicheROVER
+Title: (Niche) (R)egion and Niche (Over)lap Metrics for
+        Multidimensional Ecological Niches
+Version: 1.0
+Date: 2014-07-21
+Authors@R: c(person("Martin", "Lysy", role = c("aut", "cre"),
+    email = "mlysy@uwaterloo.ca"),
+    person("Ashley D.", "Stasko", role = c("aut", "ctb")),
+    person("Heidi K.", "Swanson", role = c("aut", "ctb")))
+Description: This package uses a probabilistic method to calculate niche
+    regions and pairwise niche overlap using multidimensional niche indicator
+    data (e.g., stable isotopes, environmental variables, etc.). The niche
+    region is defined as the joint probability density function of the
+    multidimensional niche indicators at a user-defined probability alpha
+    (e.g., 95%).  Uncertainty is accounted for in a Bayesian framework, and the
+    method can be extended to three or more indicator dimensions.  It provides
+    directional estimates of niche overlap, accounts for species-specific
+    distributions in multivariate niche space, and produces unique and
+    consistent bivariate projections of the multivariate niche region.  A
+    forthcoming article by Swanson et al. (Ecology, 2014) provides a detailed
+    description of the methodology.  See the package vignette for a worked
+    example using fish stable isotope data.
+Depends: R (>= 1.9.0), mvtnorm
+Suggests: knitr
+VignetteBuilder: knitr
+License: GPL-2
+LazyData: true
+Packaged: 2014-09-05 16:35:53 UTC; mlysy
+Author: Martin Lysy [aut, cre],
+  Ashley D. Stasko [aut, ctb],
+  Heidi K. Swanson [aut, ctb]
+Maintainer: Martin Lysy <mlysy@uwaterloo.ca>
