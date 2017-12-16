@@ -42,7 +42,7 @@ draws from the distribution of species \eqn{A} and counting the fraction of them
 Typically the true values of \eqn{\Theta_A} and \eqn{\Theta_B} are unknown and must be estimated from the data.
 Thus, the overlap metric is calculated for \code{nreps} combinations of samples from
 \eqn{p(\Theta_A | X)} and \eqn{p(\Theta_B | X)} which are supplied in \code{niche.par}.
-See Swanson et al. (2014) for a detailed description of niche overlap and its calculation.
+See Swanson et al. (2015) for a detailed description of niche overlap and its calculation.
 }
 \examples{
 # fish data
@@ -69,7 +69,7 @@ over.cred <- apply(over*100, c(1:2, 4), quantile, prob = c(.025, .975), na.rm = 
 round(over.cred[,,,1]) # display alpha = .95 niche region
 }
 \references{
-Heidi K. Swanson, Martin Lysy, Ashley D. Stasko, Michael Power, Jim D. Johnson, and James D. Reist (2014).  ``What Would Hutchinson Think?  A Probabilistic Quantification of Multidimensional Ecological Niches and Niche Overlap''.  \emph{Ecology: Statistical Reports} (accepted).
+Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." \emph{Ecology: Statistical Reports} 96:2 (2015): 318-324. \url{https://www.ncbi.nlm.nih.gov/pubmed/26240852}.
 }
 \seealso{
 \code{\link{overlap.plot}}, \code{\link{niw.post}}, \code{\link{niiw.post}}.

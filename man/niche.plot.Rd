@@ -38,7 +38,7 @@ ii) their density estimates, and iii) 2-dimensional projections of probabilistic
 \details{
 A set of plots is created for each pairwise combination of niche indicators.
 Below the diagonal are scatterplots for each species, above the diagonal are ellipses corresponding to 2-d projections of the probabilistic niche regions.  The diagonal displays density estimates for each indicator, and optionally the raw 1-d data.
-See Swanson et al. (2014) for detailed description of the probabilistic niche region.
+See Swanson et al. (2015) for detailed description of the probabilistic niche region.
 }
 \examples{
 data(fish) # 4 fish, 3 isotopes
@@ -57,7 +57,7 @@ niche.plot(niche.par = fish.par, niche.data = fish.data, pfrac = .1,
           col = clrs, xlab = expression("Isotope Ratio (\\u2030)"))
 }
 \references{
-Heidi K. Swanson, Martin Lysy, Ashley D. Stasko, Michael Power, Jim D. Johnson, and James D. Reist (2014).  ``What Would Hutchinson Think?  A Probabilistic Quantification of Multidimensional Ecological Niches and Niche Overlap''.  \emph{Ecology: Statistical Reports} (accepted).
+Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." \emph{Ecology: Statistical Reports} 96:2 (2015): 318-324. \url{https://www.ncbi.nlm.nih.gov/pubmed/26240852}.
 }
 \seealso{
 \code{\link{overlap.plot}}, \code{\link{niw.post}}, \code{\link{niiw.post}}.

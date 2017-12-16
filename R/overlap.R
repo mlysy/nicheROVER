@@ -10,7 +10,7 @@
 #'Typically the true values of \eqn{\Theta_A} and \eqn{\Theta_B} are unknown and must be estimated from the data.
 #'Thus, the overlap metric is calculated for \code{nreps} combinations of samples from
 #'\eqn{p(\Theta_A | X)} and \eqn{p(\Theta_B | X)} which are supplied in \code{niche.par}.
-#'See Swanson et al. (2014) for a detailed description of niche overlap and its calculation.
+#'See Swanson et al. (2015) for a detailed description of niche overlap and its calculation.
 #'@param niche.par a list with \code{nspecies = length(niche.par)}, each element of which in turn is a list with elements \code{mu} and \code{Sigma}.  See Details.
 #'@param nreps the number of overlap metric calculations for each species.  Defaults to
 #'the smallest number of parameter samples supplied by \code{niche.par}.  See Details.
@@ -24,7 +24,7 @@
 #'where \code{nlevels} is the number of alpha levels at which to calculate the overlap metric.  For each of the last two dimensions of the output array, the first two dimensions form an \code{nspecies} by \code{nspecies} matrix giving
 #'each pairwise calculation of overlap metric between two species for given \eqn{\Theta_A}, \eqn{\Theta_B}, and \code{alpha}.
 #'In each of these matrices, Species \eqn{A} is along the rows of this matrix and Species \eqn{B} is along the columns.
-#'@references Heidi K. Swanson, Martin Lysy, Ashley D. Stasko, Michael Power, Jim D. Johnson, and James D. Reist (2014).  ``What Would Hutchinson Think?  A Probabilistic Quantification of Multidimensional Ecological Niches and Niche Overlap''.  \emph{Ecology: Statistical Reports} (accepted).
+#'@references Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." \emph{Ecology: Statistical Reports} 96:2 (2015): 318-324. \url{https://www.ncbi.nlm.nih.gov/pubmed/26240852}.
 #'@seealso \code{\link{overlap.plot}}, \code{\link{niw.post}}, \code{\link{niiw.post}}.
 #'@examples
 #'# fish data

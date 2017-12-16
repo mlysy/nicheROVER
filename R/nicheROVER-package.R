@@ -17,7 +17,7 @@
 #'multivariate niche space, and produces unique and consistent bivariate projections of
 #'the multivariate niche region. See Swanson et al. (2014) for a detailed description and
 #'worked example below using fish stable isotope data.
-#'@references Heidi K. Swanson, Martin Lysy, Ashley D. Stasko, Michael Power, Jim D. Johnson, and James D. Reist (2014).  ``What Would Hutchinson Think?  A Probabilistic Quantification of Multidimensional Ecological Niches and Niche Overlap''.  \emph{Ecology: Statistical Reports} (accepted).
+#'@references Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." \emph{Ecology: Statistical Reports} 96:2 (2015): 318-324. \url{https://www.ncbi.nlm.nih.gov/pubmed/26240852}.
 #'@examples
 #'# analysis for fish data
 #'
@@ -56,7 +56,10 @@
 #'# overlap plot
 #'overlap.plot(over.stat, col = clrs, mean.cred.col = "turquoise", equal.axis = TRUE,
 #'             xlab = "Overlap Probability (%) -- Niche Region Size: 95%")
-#'@docType package
-#'@importFrom mvtnorm rmvnorm
-#'@name nicheROVER
+#' @docType package
+#' @importFrom mvtnorm rmvnorm
+#' @importFrom graphics abline axis box hist legend lines mtext par plot plot.new plot.window points segments text
+#' @importFrom stats density pbeta qchisq quantile rbeta rchisq rnorm
+#' @importFrom utils combn
+#' @name nicheROVER
 NULL

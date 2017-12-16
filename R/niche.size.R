@@ -14,7 +14,7 @@
 #' @export
 niche.size <- function(Sigma, alpha = .95) {
   n <- nrow(Sigma)
-  sz <- as.numeric(determinant(Sigma, log = TRUE)$modulus)
+  sz <- as.numeric(determinant(Sigma, logarithm = TRUE)$modulus)
   sz <- .5 * (sz + n * (log(pi) + log(qchisq(alpha, df = n)))) - lgamma(.5*n+1)
   exp(sz)
 }
