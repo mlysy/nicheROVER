@@ -47,7 +47,7 @@ rniw <- function(n, lambda, kappa, Psi, nu) {
   mu <- matrix(NA, n, d)
   colnames(mu) <- names(lambda)
   for(ii in 1:n) {
-    mu[ii,] <- rmvnorm(1, mean = lambda, sigma = Sigma[,,ii]/kappa)
+    mu[ii,] <- .rmvn(mean = lambda, sigma = Sigma[,,ii]/kappa)
   }
   list(mu = mu, Sigma = Sigma)
 }

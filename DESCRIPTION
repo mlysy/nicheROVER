@@ -20,7 +20,7 @@ Description: This package uses a probabilistic method to calculate niche
     article by Swanson et al. (Ecology, 2015) provides a detailed
     description of the methodology.  See the package vignette for a worked
     example using fish stable isotope data.
-Depends: R (>= 1.9.0), mvtnorm
+Depends: R (>= 1.9.0)
 Imports: graphics, stats, utils
 Suggests: knitr
 VignetteBuilder: knitr

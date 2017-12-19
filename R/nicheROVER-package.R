@@ -57,7 +57,6 @@
 #'overlap.plot(over.stat, col = clrs, mean.cred.col = "turquoise", equal.axis = TRUE,
 #'             xlab = "Overlap Probability (%) -- Niche Region Size: 95%")
 #' @docType package
-#' @importFrom mvtnorm rmvnorm
 #' @importFrom graphics abline axis box hist legend lines mtext par plot plot.new plot.window points segments text
 #' @importFrom stats density pbeta qchisq quantile rbeta rchisq rnorm
 #' @importFrom utils combn

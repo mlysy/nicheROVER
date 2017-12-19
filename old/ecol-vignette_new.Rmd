@@ -1,18 +1,19 @@
 ---
-title: "An Ecologist's Guide to nicheROVER: Niche Region and Niche Overlap Metrics for Multidimensional Ecological Niches"
-subtitle: "Using nicheROVER for Ecological Data: A Step-by-Step Example"
-output:
-  html_vignette:
-    toc: true
+output: html_vignette
 vignette: >
   %\VignetteIndexEntry{An Ecologist's Guide to nicheROVER}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
 
+An Ecologist's Guide to <span style="color:blue">nicheROVER</span>: <span style="color:blue">Niche</span> <span style="color:blue">R</span>egion and Niche <span style="color:blue">Over</span>lap Metrics for Multidimensional Ecological Niches
+========================================================
+Using nicheROVER for Ecological Data: A Step-by-Step Example
+--------------------------------------------------------
+
 ### 1. Preliminaries
 
-For the beginner or first-time user, you will need to familiarize yourself with the following functions and help pages: `niche.plot`, `overlap`, and `overlap.plot`.  **`nicheROVER`** requires the package `mvtnorm`.
+For the beginner or first-time user, you will need to familiarize yourself with the following functions and help pages: `niche.plot`, `overlap`, and `overlap.plot`.
 
 ### 2. Formatting data for use in **`nicheROVER`** 
 

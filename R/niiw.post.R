@@ -20,13 +20,14 @@
 #'@return Returns a list with elements \code{mu} and \code{Sigma} of sizes \code{c(nsamples, length(lambda))} and \code{c(dim(Psi), nsamples)}.
 #'@seealso \code{\link{niw.post}}, \code{\link{rwish}}.
 #'@examples
-#'# simulate data
+#'# simulate normal data with mean and variance (mu0, Sigma0)
 #'d <- 4
 #'mu0 <- rnorm(d)
 #'Sigma0 <- matrix(rnorm(d^2), d, d)
 #'Sigma0 <- Sigma0 %*% t(Sigma0)
-#'N <- 100
-#'X <- rmvnorm(N, mean = mu0, sigma = Sigma0)
+#'N <- 1e2
+#'X <- matrix(rnorm(N*d), N, d) # iid N(0,1)
+#'X <- t(t(X %*% chol(Sigma0)) + mu0) # each row is N(mu0, Sigma)
 #'
 #'# prior parameters
 #'# flat prior on mu
@@ -92,7 +93,7 @@ niiw.post <- function(nsamples, X, lambda, Omega, Psi, nu, mu0 = lambda, burn) {
     lambda2 <- c(IB %*% Xbar)
     if(!all(Omega == 0)) lambda2 <- lambda2 + c(B %*% lambda)
     Omega2 <- IB %*% Sigma2
-    mu <- c(rmvnorm(1, lambda2, Omega2))
+    mu <- .rmvn(mean = lambda2, sigma = Omega2)
     # store
     if(ii > 0) {
       mu.out[ii,] <- mu

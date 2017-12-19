@@ -40,13 +40,14 @@ Random draws are obtained by a Markov chain Monte Carlo (MCMC) algorithm; specif
 a Gibbs sampler alternates between draws from \eqn{p(\mu | \Sigma, X)} and \eqn{p(\Sigma | \mu, X)}, which are Normal and Inverse-Wishart distributions respectively.
 }
 \examples{
-# simulate data
+# simulate normal data with mean and variance (mu0, Sigma0)
 d <- 4
 mu0 <- rnorm(d)
 Sigma0 <- matrix(rnorm(d^2), d, d)
 Sigma0 <- Sigma0 \%*\% t(Sigma0)
-N <- 100
-X <- rmvnorm(N, mean = mu0, sigma = Sigma0)
+N <- 1e2
+X <- matrix(rnorm(N*d), N, d) # iid N(0,1)
+X <- t(t(X \%*\% chol(Sigma0)) + mu0) # each row is N(mu0, Sigma)
 
 # prior parameters
 # flat prior on mu
