@@ -2,7 +2,7 @@
 % Please edit documentation in R/overlap.plot.R
 \name{overlap.plot}
 \alias{overlap.plot}
-\title{Plot the overlap metric}
+\title{Plot the overlap metric.}
 \usage{
 overlap.plot(over.stat, nbreaks = 50, equal.axis = FALSE, species.names,
   col, mean.cred = TRUE, mean.cred.col = "green", xlab)

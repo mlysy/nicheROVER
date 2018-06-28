@@ -2,7 +2,7 @@
 % Please edit documentation in R/overlap.R
 \name{overlap}
 \alias{overlap}
-\title{Monte Carlo calculation of niche region overlap metrics}
+\title{Monte Carlo calculation of niche region overlap metrics.}
 \usage{
 overlap(niche.par, nreps, nprob, alpha = 0.95, species.names,
   norm.redraw = TRUE)

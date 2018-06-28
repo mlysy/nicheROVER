@@ -2,7 +2,7 @@
 % Please edit documentation in R/niche.plot.R
 \name{niche.plot}
 \alias{niche.plot}
-\title{Plot for 2-d projection of niche regions}
+\title{Plot for 2-d projection of niche regions.}
 \usage{
 niche.plot(niche.par, niche.data, alpha = 0.95, species.names, iso.names,
   lims, col, ndens = 512, pfrac = 0, xlab)

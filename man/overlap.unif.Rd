@@ -3,7 +3,7 @@
 \name{overlap.unif}
 \alias{overlap.unif}
 \alias{overlap.sphere}
-\title{Overlap calculation for uniform niche regions}
+\title{Overlap calculation for uniform niche regions.}
 \usage{
 overlap.unif(muA, SigmaA, muB, SigmaB, alphaA = 0.95, alphaB = 0.95, nprob)
 
@@ -21,10 +21,10 @@ overlap.sphere(muA, sigmaA, muB, sigmaB, alphaA = 0.95, alphaB = 0.95)
 \item{sigmaA, sigmaB}{standard deviations (scalars) of spherical niche regions.}
 }
 \value{
-A Monte Carlo estimate of the niche overlap.
+A Monte Carlo estimate of the niche overlap for \code{overlap.unif}, and an analytic calcuation for \code{overlap.sphere}.
 }
 \description{
-Overlap calculation for uniform niche regions
+Overlap calculation for uniform niche regions.
 }
 \details{
 The overlap between niche regions \eqn{A} and \eqn{B} is defined as \eqn{vol(A \cap B)/vol(A \cup B)}, where the hypervolume of an n-dimensional region \eqn{S \in \mathbb R^n} is \eqn{vol(S) = \int_S dx}.  For elliptical niche regions, there are simple formulas for \eqn{vol(A)} and \eqn{vol(B)}.  Thus, we need only determine the volume of the intersection \eqn{vol(A \cap B)}, as the volume of the union is given by the formula \eqn{vol(A \cup B) = vol(A) + vol(B) - vol(A \cap B)}.

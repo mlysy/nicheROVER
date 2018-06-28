@@ -1,4 +1,4 @@
-#'@title Plot for 2-d projection of niche regions
+#'@title Plot for 2-d projection of niche regions.
 #'
 #'@description For one or more species, creates a series of plots: i) the raw niche indicators (e.g., stable isotope) data,
 #'ii) their density estimates, and iii) 2-dimensional projections of probabilistic niche regions based on \eqn{n}-dimensionsional data.

@@ -1,4 +1,4 @@
-#'@title Plot for niche parameters
+#'@title Plot for niche parameters.
 #'
 #'@description For one or more species, plots some or all of the niche parameters \eqn{\mu} and \eqn{\Sigma}.
 #'@param niche.par list with \code{nspecies = length(niche.par)}, each element of which is a list with parameters \code{mu} and \code{Sigma}.  See Details.

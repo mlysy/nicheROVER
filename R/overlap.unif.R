@@ -1,4 +1,4 @@
-#' Overlap calculation for uniform niche regions
+#' Overlap calculation for uniform niche regions.
 #'
 #' @details The overlap between niche regions \eqn{A} and \eqn{B} is defined as \eqn{vol(A \cap B)/vol(A \cup B)}, where the hypervolume of an n-dimensional region \eqn{S \in \mathbb R^n} is \eqn{vol(S) = \int_S dx}.  For elliptical niche regions, there are simple formulas for \eqn{vol(A)} and \eqn{vol(B)}.  Thus, we need only determine the volume of the intersection \eqn{vol(A \cap B)}, as the volume of the union is given by the formula \eqn{vol(A \cup B) = vol(A) + vol(B) - vol(A \cap B)}.
 #'
@@ -9,7 +9,7 @@
 #' @param SigmaA,SigmaB variance matrix of elliptical niche regions.
 #' @param alphaA,alphaB probabilistic size of niche regions.
 #' @param nprob number of uniform draws from niche region \code{A}.
-#' @return A Monte Carlo estimate of the niche overlap.
+#' @return A Monte Carlo estimate of the niche overlap for \code{overlap.unif}, and an analytic calcuation for \code{overlap.sphere}.
 #' @name overlap.unif
 #' @examples
 #' # spherical case: compare Monte Carlo method to analytic formula
@@ -67,9 +67,9 @@ overlap.sphere <- function(muA, sigmaA, muB, sigmaB,
   rB <- sigmaB * sqrt(qchisq(alphaB, df = n))
   dd <- sqrt(sum((muA - muB)^2)) # distance between sphere centers
   if(dd > rA + rB) {
-    volAB <- 0
-  } else if(dd < abs(rA-rB)) {
-    volAB <- min(volA, volB)
+    volAB <- 0 # no overlap
+  } else if(dd <= abs(rA-rB)) {
+    volAB <- min(volA, volB) # one sphere fully inside other
   } else {
     cA <- .5 * (dd^2 + rA^2 - rB^2)/dd
     cB <- .5 * (dd^2 - rA^2 + rB^2)/dd

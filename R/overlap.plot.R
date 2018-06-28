@@ -1,4 +1,4 @@
-#'@title Plot the overlap metric
+#'@title Plot the overlap metric.
 #'
 #'@description Plots the posterior distribution of the niche region overlap metric calculated for
 #'each pairwise combination of species.

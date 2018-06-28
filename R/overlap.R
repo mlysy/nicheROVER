@@ -1,4 +1,4 @@
-#'@title Monte Carlo calculation of niche region overlap metrics
+#'@title Monte Carlo calculation of niche region overlap metrics.
 #'
 #'@description Calculates the distribution of a niche region overlap metric for each pairwise species combination
 #'and user-specified niche region sizes.

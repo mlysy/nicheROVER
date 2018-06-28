@@ -2,7 +2,7 @@
 % Please edit documentation in R/niche.par.plot.R
 \name{niche.par.plot}
 \alias{niche.par.plot}
-\title{Plot for niche parameters}
+\title{Plot for niche parameters.}
 \usage{
 niche.par.plot(niche.par, plot.mu = TRUE, plot.Sigma = TRUE, plot.index,
   col, ndens = 512, ylab)
