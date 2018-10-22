@@ -77,3 +77,24 @@ over.stat <- overlap(fish.par, nreps = nsamples, nprob = 1e3, alpha = .95)
 overlap.plot(over.stat, col = clrs, mean.cred.col = "turquoise", equal.axis = TRUE,
             xlab = "Overlap Probability (%) -- Niche Region Size: 95%")
 
+## ----fig.width = 7, fig.height = 4---------------------------------------
+# posterior distribution of (mu, Sigma) for each species
+nsamples <- 1000
+fish.par <- tapply(1:nrow(fish), fish$species,
+                  function(ii) niw.post(nsamples = nsamples, X = fish[ii,2:4]))
+
+# posterior distribution of niche size by species
+fish.size <- sapply(fish.par, function(spec) {
+  apply(spec$Sigma, 3, niche.size, alpha = .95)
+})
+
+# point estimate and standard error
+rbind(est = colMeans(fish.size),
+      se = apply(fish.size, 2, sd))
+
+# boxplots
+clrs <- c("black", "red", "blue", "orange") # colors for each species
+boxplot(fish.size, col = clrs, pch = 16, cex = .5,
+        ylab = "Niche Size", xlab = "Species")
+
+

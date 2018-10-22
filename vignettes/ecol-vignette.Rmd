@@ -1,17 +1,18 @@
-<!--
-%\VignetteEngine{knitr::knitr}
-%\VignetteIndexEntry{An Ecologist's Guide to nicheROVER}
--->
+---
+title: "An Ecologist's Guide to nicheROVER: `Niche` `R`egion and Niche `Over`lap Metrics for Multidimensional Ecological Niches"
+subtitle: "Using nicheROVER for Ecological Data: A Step-by-Step Example"
+author: "Martin Lysy, Heidi Swanson"
+date: "`r Sys.Date()`"
+output: html_vignette
+vignette: >
+  %\VignetteIndexEntry{An Ecologist's Guide to nicheROVER}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
 
-An Ecologist's Guide to <span style="color:blue">nicheROVER</span>: <span style="color:blue">Niche</span> <span style="color:blue">R</span>egion and Niche <span style="color:blue">Over</span>lap Metrics for Multidimensional Ecological Niches
-========================================================
-Using nicheROVER for Ecological Data: A Step-by-Step Example
---------------------------------------------------------
-For the beginner or first-time user, you will need to familiarize yourself with the following functions and help pages: `niche.plot`, `overlap`, and `overlap.plot`.
+### 1. Preliminaries
 
-### 1. Required packages
-
-nicheROVER requires the package `mvtnorm`
+For the beginner or first-time user, you will need to familiarize yourself with the following functions and help pages: `niche.plot`, `niche.size`, `overlap`, and `overlap.plot`.
 
 ### 2. Formatting data for use in nicheROVER 
 
@@ -87,7 +88,7 @@ niche.plot(niche.par = fish.par, niche.data = fish.data, pfrac = .05,
 
 ### 5. Calculate and display niche overlap estimates
 
-For the final step, we use the function `overlap()` to calculate overlap metric estimates from a specified number of Monte Carlo draws (`nsamples`) from the `fish.par` parameter list. It is necessary to specify the $\alpha$-level. In this case, we have decided to calculate the overlap metric at two niche regions sizes for comparison: `alpha=0.95` and `alpha=0.99`, or 95% and 99%.
+We use the function `overlap()` to calculate overlap metric estimates from a specified number of Monte Carlo draws (`nsamples`) from the `fish.par` parameter list. It is necessary to specify the $\alpha$-level. In this case, we have decided to calculate the overlap metric at two niche regions sizes for comparison: `alpha=0.95` and `alpha=0.99`, or 95% and 99%.
 
 Then, we calculate the mean overlap metric between each species. Remember that the overlap metric is directional, such that it represents the probability that an individual from Species $A$ will be found in the niche of Species $B$.
 
@@ -121,4 +122,30 @@ clrs <- c("black", "red", "blue", "orange") # colors for each species
 over.stat <- overlap(fish.par, nreps = nsamples, nprob = 1e3, alpha = .95)
 overlap.plot(over.stat, col = clrs, mean.cred.col = "turquoise", equal.axis = TRUE,
             xlab = "Overlap Probability (%) -- Niche Region Size: 95%")
+```
+
+### 6.  Calculate and display niche size estimates
+
+See `?niche.size` for exactly how niche size is defined as a function of the parameters $\mu$ and $\Sigma$.  In a Bayesian context, we calculate the posterior distribution of niche size by species.  This done by calculating the niche size for every posterior sample of $\mu$ and $\Sigma$.
+
+```{r fig.width = 7, fig.height = 4}
+# posterior distribution of (mu, Sigma) for each species
+nsamples <- 1000
+fish.par <- tapply(1:nrow(fish), fish$species,
+                  function(ii) niw.post(nsamples = nsamples, X = fish[ii,2:4]))
+
+# posterior distribution of niche size by species
+fish.size <- sapply(fish.par, function(spec) {
+  apply(spec$Sigma, 3, niche.size, alpha = .95)
+})
+
+# point estimate and standard error
+rbind(est = colMeans(fish.size),
+      se = apply(fish.size, 2, sd))
+
+# boxplots
+clrs <- c("black", "red", "blue", "orange") # colors for each species
+boxplot(fish.size, col = clrs, pch = 16, cex = .5,
+        ylab = "Niche Size", xlab = "Species")
+
 ```

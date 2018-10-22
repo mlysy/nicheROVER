@@ -5,7 +5,8 @@
 \alias{overlap.sphere}
 \title{Overlap calculation for uniform niche regions.}
 \usage{
-overlap.unif(muA, SigmaA, muB, SigmaB, alphaA = 0.95, alphaB = 0.95, nprob)
+overlap.unif(muA, SigmaA, muB, SigmaB, alphaA = 0.95, alphaB = 0.95,
+  nprob)
 
 overlap.sphere(muA, sigmaA, muB, sigmaB, alphaA = 0.95, alphaB = 0.95)
 }

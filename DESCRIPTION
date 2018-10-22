@@ -26,4 +26,5 @@ Suggests: knitr
 VignetteBuilder: knitr
 License: GPL-3
 LazyData: true
-RoxygenNote: 6.0.1
+Encoding: UTF-8
+RoxygenNote: 6.1.0
