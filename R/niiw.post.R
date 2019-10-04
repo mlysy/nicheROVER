@@ -28,6 +28,7 @@
 #' @export
 niiw.post <- function(nsamples, X, lambda, Omega, Psi, nu, mu0 = lambda, burn) {
   # sufficient statistics
+  X <- as.matrix(X)
   d <- ncol(X)
   N <- nrow(X)
   Xbar <- colMeans(X)

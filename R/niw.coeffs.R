@@ -23,6 +23,7 @@
 #' @example examples/niw.coeffs.R
 #' @export
 niw.coeffs <- function(X, lambda, kappa, Psi, nu) {
+  X <- as.matrix(X)
   d <- ncol(X)
   N <- nrow(X)
   if(missing(kappa)) kappa <- 0
