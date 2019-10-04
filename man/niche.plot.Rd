@@ -32,29 +32,27 @@ niche.plot(niche.par, niche.data, alpha = 0.95, species.names, iso.names,
 Returns a series of plots displaying niche indicator data and their probabilistic niche projections.
 }
 \description{
-For one or more species, creates a series of plots: i) the raw niche indicators (e.g., stable isotope) data,
-ii) their density estimates, and iii) 2-dimensional projections of probabilistic niche regions based on \eqn{n}-dimensionsional data.
+For one or more species, creates a series of plots: (i) the raw niche indicators (e.g., stable isotope) data, (ii) their density estimates, and (iii) 2-dimensional projections of probabilistic niche regions based on \eqn{n}-dimensionsional data.
 }
 \details{
-A set of plots is created for each pairwise combination of niche indicators.
-Below the diagonal are scatterplots for each species, above the diagonal are ellipses corresponding to 2-d projections of the probabilistic niche regions.  The diagonal displays density estimates for each indicator, and optionally the raw 1-d data.
-See Swanson et al. (2015) for detailed description of the probabilistic niche region.
+A set of plots is created for each pairwise combination of niche indicators.  Below the diagonal are scatterplots for each species, above the diagonal are ellipses corresponding to 2-d projections of the probabilistic niche regions.  The diagonal displays density estimates for each indicator, and optionally the raw 1-d data.  See Swanson et al. (2015) for detailed description of the probabilistic niche region.
 }
 \examples{
 data(fish) # 4 fish, 3 isotopes
 
-# generate 10 parameter draws from the posteriors of each fish with default prior
+# generate 10 parameter draws from the posteriors
+# of each fish with default prior
 nsamples <- 10
 fish.par <- tapply(1:nrow(fish), fish$species,
-                  function(ii) niw.post(nsamples = nsamples, X = fish[ii,2:4]))
+                   function(ii) niw.post(nsamples = nsamples, X = fish[ii,2:4]))
 
 # format data for plotting function
 fish.data <- tapply(1:nrow(fish), fish$species, function(ii) X = fish[ii,2:4])
 
 clrs <- c("black", "red", "blue", "orange") # colors for each species
 niche.plot(niche.par = fish.par, niche.data = fish.data, pfrac = .1,
-          iso.names = expression(delta^{15}*N, delta^{13}*C, delta^{34}*S),
-          col = clrs, xlab = expression("Isotope Ratio (\\u2030)"))
+           iso.names = expression(delta^{15}*N, delta^{13}*C, delta^{34}*S),
+           col = clrs, xlab = expression("Isotope Ratio (\\u2030)"))
 }
 \references{
 Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." \emph{Ecology: Statistical Reports} 96:2 (2015): 318-324. \url{https://www.ncbi.nlm.nih.gov/pubmed/26240852}.

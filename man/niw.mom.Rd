@@ -16,19 +16,16 @@ niw.mom(lambda, kappa, Psi, nu)
 \item{nu}{degrees of freedom.  See Details.}
 }
 \value{
-Returns a list with elements \code{mu} and \code{Sigma}, each containing lists with
-elements \code{mean} and \code{var}.  For \code{mu} these elements are of size \code{length(lambda)}
-and \code{c(length(lambda),length(lambda))}.  For \code{Sigma} they are of size \code{dim(Psi)}
-and \code{c(dim(Psi), dim(Psi))}, such that cov\eqn{(\Sigma_{ij}, \Sigma_{kl})=}\code{Sigma$var[i,j,k,l]}.
+Returns a list with elements \code{mu} and \code{Sigma}, each containing lists with elements \code{mean} and \code{var}.  For \code{mu} these elements are of size \code{length(lambda)} and \code{c(length(lambda),length(lambda))}.  For \code{Sigma} they are of size \code{dim(Psi)} and \code{c(dim(Psi), dim(Psi))}, such that cov\eqn{(\Sigma_{ij}, \Sigma_{kl})=}\code{Sigma$var[i,j,k,l]}.
 }
 \description{
-This function computes the mean and variance of the Normal-Inverse-Wishart (NIW)
-distribution.  Can be used to very quickly compute Bayesian point estimates for the conjugate
-NIW prior.
+This function computes the mean and variance of the Normal-Inverse-Wishart (NIW) distribution.  Can be used to very quickly compute Bayesian point estimates for the conjugate NIW prior.
 }
 \details{
 The NIW distribution \eqn{p(\mu, \Sigma | \lambda, \kappa, \Psi, \nu)} is defined as
-\deqn{\Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Sigma/\kappa).}
+\deqn{
+\Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Sigma/\kappa).
+}
 Note that cov\eqn{(\mu, \Sigma) = 0}.
 }
 \examples{
@@ -53,7 +50,7 @@ c(true = niw.mV$mu$mean[ii], sim = mean(niw.sim$mu[,ii]))
 II <- c(1,2)
 JJ <- c(2,3)
 c(true = niw.mV$var[II[1],II[2],JJ[1],JJ[2]],
- sim = cov(niw.sim$Sigma[II[1],II[2],], niw.sim$Sigma[JJ[1],JJ[2],]))
+  sim = cov(niw.sim$Sigma[II[1],II[2],], niw.sim$Sigma[JJ[1],JJ[2],]))
 }
 \seealso{
 \code{\link{rniw}}, \code{\link{niw.coeffs}}, \code{\link{niw.post}}.

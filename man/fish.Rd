@@ -5,24 +5,26 @@
 \alias{fish}
 \title{Fish stable isotope dataset.}
 \format{A data frame with 278 rows (observations) and 4 columns (species, delta^{15}N, delta^{13}C, and delta^{34}S).}
+\source{
+Fish were collected between 2007 and 2008 from an estuarine area of the Beaufort Sea, North and West of the Mackenzie Delta at Phillips Bay, Yukon Territory, Canada (69.28 N, 138.49 W).
+}
+\usage{
+fish
+}
 \description{
-A dataset containing values for three stable isotopes measured
-in the muscle tissue of four species of arctic fish. For use in examples.
+A dataset containing values for three stable isotopes measured in the muscle tissue of four species of arctic fish. For use in examples.
 }
 \details{
-This dataset contains delta^{15}N, delta^{13}C, and delta^{34}S
-values for the following fish species:
+This dataset contains delta^{15}N, delta^{13}C, and delta^{34}S values for the following fish species:
 \itemize{
-\item ARCS - Arctic Cisco (\emph{Coregonus autumnalis}), n = 69
-\item BDWF - Broad Whitefish (\emph{Coregonus nasus}), n = 71
-\item LKWF - Lake Whitefish (\emph{Coregonus clupeaformis}), n = 67
-\item LSCS - Least Cisco (\emph{Coregonus sardinella}), n = 70
+  \item ARCS - Arctic Cisco (\emph{Coregonus autumnalis}), n = 69
+  \item BDWF - Broad Whitefish (\emph{Coregonus nasus}), n = 71
+  \item LKWF - Lake Whitefish (\emph{Coregonus clupeaformis}), n = 67
+  \item LSCS - Least Cisco (\emph{Coregonus sardinella}), n = 70
 }
-Fish were collected between 2007 and 2008 from an estuarine area of the
-Beaufort Sea, North and West of the Mackenzie Delta at Phillips
-Bay, Yukon Territory, Canada (69.28 N, 138.49 W).
 }
 \examples{
-data(fish)
+head(fish)
 aggregate(fish[2:4], fish[1], mean)
 }
+\keyword{datasets}

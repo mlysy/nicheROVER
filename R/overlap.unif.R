@@ -5,37 +5,14 @@
 #' For spherical niche regions, \eqn{vol(A \cap B)} has a closed-form expression (see References).  For elliptical regions, no such formula exists and a Monte Carlo method is used instead.  That is, \eqn{vol(A \cap B)} is calculated by sampling uniformly from \eqn{A}, then multiplying \eqn{vol(A)} by the fraction of sampled points which fall into \eqn{B}.
 #'
 #' While the uniform overlap metric is invariant to permutation of niche regions \eqn{A} and \eqn{B}, the accuracy of the Monte Carlo calculation of \eqn{vol(A \cap B)} is not: higher accuracy is obtained when a higher fraction of sampled points are in the opposite niche region.  \code{overlap.unif} does not attempt to determine for which region this is the case, though the choice can be informed by plotting the niche regions, e.g., with \code{\link{niche.plot}}.
+#'
 #' @param muA,muB mean of niche regions.
 #' @param SigmaA,SigmaB variance matrix of elliptical niche regions.
 #' @param alphaA,alphaB probabilistic size of niche regions.
 #' @param nprob number of uniform draws from niche region \code{A}.
 #' @return A Monte Carlo estimate of the niche overlap for \code{overlap.unif}, and an analytic calcuation for \code{overlap.sphere}.
 #' @name overlap.unif
-#' @examples
-#' # spherical case: compare Monte Carlo method to analytic formula
-#'
-#' d <- 2 # 2D example
-#' mA <- rnorm(d)
-#' mB <- rnorm(d)
-#' sigA <- rexp(1)
-#' SigA <- sigA^2 * diag(d)
-#' sigB <- rexp(1)
-#' SigB <- sigB^2 * diag(d)
-#'
-#' # plot circles
-#' ellA <- ellipse(mA, SigA)
-#' ellB <- ellipse(mB, SigB)
-#' plot(0, type = "n",
-#'      xlim = range(ellA[,1], ellB[,1]),
-#'      ylim = range(ellA[,2], ellB[,2]), xlab = "x", ylab = "y")
-#' lines(ellA, col = "red")
-#' lines(ellB, col = "blue")
-#' legend("topright", legend = c("niche A", "niche B"),
-#'        fill = c("red", "blue"), bg = "white")
-#'
-#' # compare niche calculations
-#' overlap.sphere(mA, sigA, mB, sigB)
-#' overlap.unif(mA, SigA, mB, SigB, nprob = 1e5)
+#' @example examples/overlap.unif.R
 #' @export
 overlap.unif <- function(muA, SigmaA, muB, SigmaB, alphaA = .95, alphaB = .95,
                          nprob) {

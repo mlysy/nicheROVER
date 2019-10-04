@@ -1,82 +1,26 @@
-#'@title Random draws from the posterior distribution with Normal-Inverse-Wishart (NIW) prior.
-#'@description Given iid \eqn{d}-dimensional niche indicators  \eqn{X = (X_1,\ldots,X_N)} with \eqn{X_i \sim N(\mu, \Sigma)},
-#'this function generates random draws from \eqn{p(\mu,\Sigma | X)} for the Normal-Inverse-Wishart
-#'(NIW) prior.
-#'@details The NIW distribution \eqn{p(\mu, \Sigma | \lambda, \kappa, \Psi, \nu)} is defined as
-#'\deqn{\Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Sigma/\kappa).}
-#'The default value \code{kappa = 0} uses the Lebesque prior on \eqn{\mu}: \eqn{p(\mu) \propto 1}.
-#'The default value \code{Psi = 0} uses the scale-invariant prior on \eqn{\Sigma}: \eqn{p(\Sigma) \propto |\Sigma|^{-(\nu+d+1)/2}}.
-#'The default value \code{nu = ncol(X)+1} for \code{kappa = 0} and \code{Psi = 0} makes \eqn{E[\mu|X]=\code{colMeans(X)}} and \eqn{E[\Sigma | X]=\code{var(X)}}.
-#'@param nsamples the number of posterior draws.
-#'@param X a data matrix with observations along the rows.
-#'@param lambda location parameter. See Details.
-#'@param kappa scale parameter. Defaults to \code{kappa = 0}.  See Details.
-#'@param Psi scale matrix. Defaults to \code{Psi = 0}.  See Details.
-#'@param nu degrees of freedom. Defaults to \code{nu = ncol(X)+1}.  See Details.
-#'@return Returns a list with elements \code{mu} and \code{Sigma} of sizes \code{c(nsamples, length(lambda))} and \code{c(dim(Psi), nsamples)}.
-#'@seealso \code{\link{rniw}}, \code{\link{niiw.post}}.
-#'@examples
-#'# compare the default non-informative prior to an arbitrary informative prior
-#'# for simulated data
+#' Random draws from the posterior distribution with Normal-Inverse-Wishart (NIW) prior.
 #'
-#'# simulate normal data with mean and variance (mu0, Sigma0)
-#'d <- 4
-#'mu0 <- rnorm(d)
-#'Sigma0 <- matrix(rnorm(d^2), d, d)
-#'Sigma0 <- Sigma0 %*% t(Sigma0)
-#'N <- 1e2
-#'X <- matrix(rnorm(N*d), N, d) # iid N(0,1)
-#'X <- t(t(X %*% chol(Sigma0)) + mu0) # each row is N(mu0, Sigma)
+#' Given iid \eqn{d}-dimensional niche indicators  \eqn{X = (X_1,\ldots,X_N)} with \eqn{X_i \sim N(\mu, \Sigma)}, this function generates random draws from \eqn{p(\mu,\Sigma | X)} for the Normal-Inverse-Wishart (NIW) prior.
 #'
-#'# informative prior parameters
-#'lambda <- rnorm(d)
-#'kappa <- 20
-#'Psi <- crossprod(matrix(rnorm(d^2), d, d))
-#'nu <- 5
+#' @details The NIW distribution \eqn{p(\mu, \Sigma | \lambda, \kappa, \Psi, \nu)} is defined as
+#' \deqn{
+#' \Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Sigma/\kappa).
+#' }
+#' The default value \code{kappa = 0} uses the Lebesque prior on \eqn{\mu}: \eqn{p(\mu) \propto 1}.
 #'
-#'# iid draws from informative prior pi(mu, Sigma)
-#'nsamples <- 2e3
-#'siw0 <- rniw(nsamples, lambda, kappa, Psi, nu)
+#' The default value \code{Psi = 0} uses the scale-invariant prior on \eqn{\Sigma}: \eqn{p(\Sigma) \propto |\Sigma|^{-(\nu+d+1)/2}}.
 #'
-#'# iid draws from posterior p(mu, Sigma | X) with informative prior
-#'siw1 <- niw.post(nsamples, X, lambda, kappa, Psi, nu)
-#'
-#'# iid draws from posterior p(mu, Sigma | X) with default noninformative prior
-#'siw2 <- niw.post(nsamples, X)
-#'
-#'# compare
-#'
-#'# prior and posterior densities of mu
-#'clrs <- c("orange", "red", "blue", "black")
-#'ii <- 1
-#'par(mar = c(4.2, 4.2, 2, 1)+.1)
-#'niche.par.plot(list(siw0, siw1, siw2), col = clrs[1:3],
-#'               plot.index = ii, ylab = "Density")
-#'abline(v = mu0[ii], col = clrs[4]) # true value of mu
-#'legend(x = "topright",
-#'       legend = c(parse(text = paste0("pi(mu[", ii, "])")),
-#'                  parse(text = paste0("p(mu[", ii, "]*\" | \"*X)*\", Informative Prior\"")),
-#'                  parse(text = paste0("p(mu[", ii, "]*\" | \"*X)*\", Noninformative Prior\"")),
-#'                  parse(text = paste0("\"True value of \"*mu[", ii, "]"))),
-#'       fill = clrs)
-#'
-#'# prior and posterior densities of Sigma
-#'ii <- 1
-#'jj <- 2
-#'par(mar = c(4.2, 4.2, 2, 1)+.1)
-#'niche.par.plot(list(siw0, siw1, siw2), col = clrs[1:3],
-#'               plot.index = c(ii,jj), ylab = "Density")
-#'abline(v = Sigma0[ii,jj], col = clrs[4])
-#'legend(x = "topright",
-#'       legend = c(parse(text = paste0("pi(Sigma[", ii, "*", jj, "])")),
-#'                  parse(text = paste0("p(Sigma[", ii, "*", jj,
-#'                                      "]*\" | \"*X)*\", Informative Prior\"")),
-#'                  parse(text = paste0("p(Sigma[", ii, "*", jj,
-#'                                      "]*\" | \"*X)*\", Noninformative Prior\"")),
-#'                  parse(text = paste0("\"True value of \"*Sigma[", ii, "*", jj, "]"))),
-#'       fill = clrs)
-#'
-#'@export
+#' The default value \code{nu = ncol(X)+1} for \code{kappa = 0} and \code{Psi = 0} makes \eqn{E[\mu|X]=\code{colMeans(X)}} and \eqn{E[\Sigma | X]=\code{var(X)}}.
+#' @param nsamples the number of posterior draws.
+#' @param X a data matrix with observations along the rows.
+#' @param lambda location parameter. See Details.
+#' @param kappa scale parameter. Defaults to \code{kappa = 0}.  See Details.
+#' @param Psi scale matrix. Defaults to \code{Psi = 0}.  See Details.
+#' @param nu degrees of freedom. Defaults to \code{nu = ncol(X)+1}.  See Details.
+#' @return Returns a list with elements \code{mu} and \code{Sigma} of sizes \code{c(nsamples, length(lambda))} and \code{c(dim(Psi), nsamples)}.
+#' @seealso \code{\link{rniw}}, \code{\link{niiw.post}}.
+#' @example examples/niw.post.R
+#' @export
 niw.post <- function(nsamples, X, lambda, kappa, Psi, nu) {
   par <- niw.coeffs(X, lambda, kappa, Psi, nu)
   rniw(nsamples, par$lambda, par$kappa, par$Psi, par$nu)

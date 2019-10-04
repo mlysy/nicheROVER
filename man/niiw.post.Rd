@@ -27,17 +27,20 @@ niiw.post(nsamples, X, lambda, Omega, Psi, nu, mu0 = lambda, burn)
 Returns a list with elements \code{mu} and \code{Sigma} of sizes \code{c(nsamples, length(lambda))} and \code{c(dim(Psi), nsamples)}.
 }
 \description{
-Given iid \eqn{d}-dimensional niche indicators  \eqn{X = (X_1,\ldots,X_N)} with \eqn{X_i \sim N(\mu, \Sigma)},
-this function generates random draws from \eqn{p(\mu,\Sigma | X)} for the Normal-Independent-Inverse-Wishart (NIIW) prior.
+Given iid \eqn{d}-dimensional niche indicators  \eqn{X = (X_1,\ldots,X_N)} with \eqn{X_i \sim N(\mu, \Sigma)}, this function generates random draws from \eqn{p(\mu,\Sigma | X)} for the Normal-Independent-Inverse-Wishart (NIIW) prior.
 }
 \details{
 The NIIW distribution \eqn{p(\mu, \Sigma | \lambda, \kappa, \Psi, \nu)} is defined as
-\deqn{\Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Omega).}
+\deqn{
+\Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Omega).
+}
 The default value \code{Omega = 0} uses the Lebesque prior on \eqn{\mu}: \eqn{p(\mu) \propto 1}.  In this case the NIW and NIIW priors produce identical resuls, but \code{\link{niw.post}} is faster.
+
 The default value \code{Psi = 0} uses the scale-invariant prior on \eqn{\Sigma}: \eqn{p(\Sigma) \propto |\Sigma|^{-(\nu+d+1)/2}}.
+
 The default value \code{nu = ncol(X)+1} for \code{Omega = 0} and \code{Psi = 0} makes \eqn{E[\mu|X]=\code{colMeans(X)}} and \eqn{E[\Sigma | X]=\code{var(X)}}.
-Random draws are obtained by a Markov chain Monte Carlo (MCMC) algorithm; specifically,
-a Gibbs sampler alternates between draws from \eqn{p(\mu | \Sigma, X)} and \eqn{p(\Sigma | \mu, X)}, which are Normal and Inverse-Wishart distributions respectively.
+
+Random draws are obtained by a Markov chain Monte Carlo (MCMC) algorithm; specifically, a Gibbs sampler alternates between draws from \eqn{p(\mu | \Sigma, X)} and \eqn{p(\Sigma | \mu, X)}, which are Normal and Inverse-Wishart distributions respectively.
 }
 \examples{
 # simulate normal data with mean and variance (mu0, Sigma0)
@@ -60,13 +63,13 @@ nu <- 5
 # sample from NIIW posterior
 nsamples <- 2e3
 system.time({
- siiw <- niiw.post(nsamples, X, lambda, Omega, Psi, nu, burn = 100)
+  siiw <- niiw.post(nsamples, X, lambda, Omega, Psi, nu, burn = 100)
 })
 
 # sample from NIW posterior
 kappa <- 0
 system.time({
- siw <- niw.post(nsamples, X, lambda, kappa, Psi, nu)
+  siw <- niw.post(nsamples, X, lambda, kappa, Psi, nu)
 })
 
 # check that posteriors are the same

@@ -13,19 +13,16 @@ rwish(n, Psi, nu, inv = FALSE)
 
 \item{nu}{degrees of freedom.}
 
-\item{inv}{logical. Setting \code{inv = TRUE} returns random matrices from an Inverse-Wishart
-distribution. See Details.}
+\item{inv}{logical. Setting \code{inv = TRUE} returns random matrices from an Inverse-Wishart distribution. See Details.}
 }
 \value{
 Returns an array of Wishart (or Inverse-Wishart) draws of size \code{c(nrow(Psi),ncol(Psi),n)}.
 }
 \description{
-Generates a random samples from a Wishart distribution defined as
-\eqn{W(\Psi, \nu)}, or an Inverse-Wishart distribution defined as \eqn{W^{-1}(\Psi, \nu)}.
+Generates a random samples from a Wishart distribution defined as \eqn{W(\Psi, \nu)}, or an Inverse-Wishart distribution defined as \eqn{W^{-1}(\Psi, \nu)}.
 }
 \details{
-Setting \code{inv = TRUE} replaces \eqn{\Psi} by \eqn{Psi^{-1}} and inverts the output random matrices,
-such that they are being generated from an Inverse-Wishart \eqn{W^{-1}(\Psi, \nu)} distribution.
+Setting \code{inv = TRUE} replaces \eqn{\Psi} by \eqn{Psi^{-1}} and inverts the output random matrices, such that they are being generated from an Inverse-Wishart \eqn{W^{-1}(\Psi, \nu)} distribution.
 }
 \examples{
 d <- 4 # number of dimensions
@@ -41,10 +38,10 @@ X <- apply(Sigma, 3, function(S) crossprod(a, S \%*\% a))
 const <- a \%*\% Psi \%*\% a
 
 hist(X, breaks = 100, freq = FALSE,
-    main = parse(text = "\\"Histogram of \\"*X==a*minute*Sigma*a"),
-    xlab = parse(text = "X==a*minute*Sigma*a"))
+     main = parse(text = "\\"Histogram of \\"*X==a*minute*Sigma*a"),
+     xlab = parse(text = "X==a*minute*Sigma*a"))
 curve(dchisq(x/const, df = nu)/const,
-     from = min(X), to = max(X), col = "red", add = TRUE)
+      from = min(X), to = max(X), col = "red", add = TRUE)
 }
 \seealso{
 \code{\link{rniw}}

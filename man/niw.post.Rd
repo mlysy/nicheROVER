@@ -23,15 +23,17 @@ niw.post(nsamples, X, lambda, kappa, Psi, nu)
 Returns a list with elements \code{mu} and \code{Sigma} of sizes \code{c(nsamples, length(lambda))} and \code{c(dim(Psi), nsamples)}.
 }
 \description{
-Given iid \eqn{d}-dimensional niche indicators  \eqn{X = (X_1,\ldots,X_N)} with \eqn{X_i \sim N(\mu, \Sigma)},
-this function generates random draws from \eqn{p(\mu,\Sigma | X)} for the Normal-Inverse-Wishart
-(NIW) prior.
+Given iid \eqn{d}-dimensional niche indicators  \eqn{X = (X_1,\ldots,X_N)} with \eqn{X_i \sim N(\mu, \Sigma)}, this function generates random draws from \eqn{p(\mu,\Sigma | X)} for the Normal-Inverse-Wishart (NIW) prior.
 }
 \details{
 The NIW distribution \eqn{p(\mu, \Sigma | \lambda, \kappa, \Psi, \nu)} is defined as
-\deqn{\Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Sigma/\kappa).}
+\deqn{
+\Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Sigma/\kappa).
+}
 The default value \code{kappa = 0} uses the Lebesque prior on \eqn{\mu}: \eqn{p(\mu) \propto 1}.
+
 The default value \code{Psi = 0} uses the scale-invariant prior on \eqn{\Sigma}: \eqn{p(\Sigma) \propto |\Sigma|^{-(\nu+d+1)/2}}.
+
 The default value \code{nu = ncol(X)+1} for \code{kappa = 0} and \code{Psi = 0} makes \eqn{E[\mu|X]=\code{colMeans(X)}} and \eqn{E[\Sigma | X]=\code{var(X)}}.
 }
 \examples{
@@ -70,30 +72,30 @@ clrs <- c("orange", "red", "blue", "black")
 ii <- 1
 par(mar = c(4.2, 4.2, 2, 1)+.1)
 niche.par.plot(list(siw0, siw1, siw2), col = clrs[1:3],
-              plot.index = ii, ylab = "Density")
+               plot.index = ii, ylab = "Density")
 abline(v = mu0[ii], col = clrs[4]) # true value of mu
 legend(x = "topright",
-      legend = c(parse(text = paste0("pi(mu[", ii, "])")),
-                 parse(text = paste0("p(mu[", ii, "]*\\" | \\"*X)*\\", Informative Prior\\"")),
-                 parse(text = paste0("p(mu[", ii, "]*\\" | \\"*X)*\\", Noninformative Prior\\"")),
-                 parse(text = paste0("\\"True value of \\"*mu[", ii, "]"))),
-      fill = clrs)
+       legend = c(parse(text = paste0("pi(mu[", ii, "])")),
+                  parse(text = paste0("p(mu[", ii, "]*\\" | \\"*X)*\\", Informative Prior\\"")),
+                  parse(text = paste0("p(mu[", ii, "]*\\" | \\"*X)*\\", Noninformative Prior\\"")),
+                  parse(text = paste0("\\"True value of \\"*mu[", ii, "]"))),
+       fill = clrs)
 
 # prior and posterior densities of Sigma
 ii <- 1
 jj <- 2
 par(mar = c(4.2, 4.2, 2, 1)+.1)
 niche.par.plot(list(siw0, siw1, siw2), col = clrs[1:3],
-              plot.index = c(ii,jj), ylab = "Density")
+               plot.index = c(ii,jj), ylab = "Density")
 abline(v = Sigma0[ii,jj], col = clrs[4])
 legend(x = "topright",
-      legend = c(parse(text = paste0("pi(Sigma[", ii, "*", jj, "])")),
-                 parse(text = paste0("p(Sigma[", ii, "*", jj,
-                                     "]*\\" | \\"*X)*\\", Informative Prior\\"")),
-                 parse(text = paste0("p(Sigma[", ii, "*", jj,
-                                     "]*\\" | \\"*X)*\\", Noninformative Prior\\"")),
-                 parse(text = paste0("\\"True value of \\"*Sigma[", ii, "*", jj, "]"))),
-      fill = clrs)
+       legend = c(parse(text = paste0("pi(Sigma[", ii, "*", jj, "])")),
+                  parse(text = paste0("p(Sigma[", ii, "*", jj,
+                                      "]*\\" | \\"*X)*\\", Informative Prior\\"")),
+                  parse(text = paste0("p(Sigma[", ii, "*", jj,
+                                      "]*\\" | \\"*X)*\\", Noninformative Prior\\"")),
+                  parse(text = paste0("\\"True value of \\"*Sigma[", ii, "*", jj, "]"))),
+       fill = clrs)
 
 }
 \seealso{

@@ -19,14 +19,13 @@ ellipse(mu, V, alpha = 0.95, n = 100)
 Returns a matrix of coordinates \code{cbind(x,y)} to plot a 2-dimensional ellipse.
 }
 \description{
-Calculates coordinates of points for plotting a 2-dimensional ellipse based on
-user-defined parameters. Can be used for exploratory data analysis to produce ellipses
-at a given niche region size (e.g., \eqn{\alpha = 95\%}).
+Calculates coordinates of points for plotting a 2-dimensional ellipse based on user-defined parameters. Can be used for exploratory data analysis to produce ellipses at a given niche region size (e.g., \eqn{\alpha = 95\%}).
 }
 \details{
-This function provides the coordinates needed to plot a 2-dimensional ellipse
-based on user-defined parameters, such that \code{X = c(x,y)} satisfies the equation
-\deqn{(X-\mu)' V^{-1} (X-\mu) = C,}
+This function provides the coordinates needed to plot a 2-dimensional ellipse based on user-defined parameters, such that \code{X = c(x,y)} satisfies the equation
+\deqn{
+(X-\mu)' V^{-1} (X-\mu) = C,
+}
 where \eqn{C=\code{qchisq(alpha, df = 2)}}.
 }
 \examples{

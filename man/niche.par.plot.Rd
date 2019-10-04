@@ -38,8 +38,8 @@ data(fish)
 # generate parameter draws from the "default" posteriors of each fish
 nsamples <- 1e3
 system.time({
- fish.par <- tapply(1:nrow(fish), fish$species,
-                    function(ii) niw.post(nsamples = nsamples, X = fish[ii,2:4]))
+  fish.par <- tapply(1:nrow(fish), fish$species,
+                     function(ii) niw.post(nsamples = nsamples, X = fish[ii,2:4]))
 })
 
 # various parameter plots

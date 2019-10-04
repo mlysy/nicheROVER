@@ -5,12 +5,7 @@
 #' @param Sigma variance matrix
 #' @param alpha probabilistic niche size
 #' @return iid draws from uniform distribution on niche region.
-#' @examples
-#' # 2d example
-#' V <- crossprod(matrix(rnorm(4),2,2))
-#' mu <- rnorm(2)
-#' plot(ellipse(mu, V), type = "l")
-#' points(niche.runif(1e4, mu, V), col = "brown", pch = ".")
+#' @example examples/niche.runif.R
 #' @export
 niche.runif <- function(n, mu, Sigma, alpha = .95) {
   k <- length(mu) # number of dimensions

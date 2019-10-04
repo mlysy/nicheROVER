@@ -21,12 +21,13 @@ rniw(n, lambda, kappa, Psi, nu)
 Returns a list with elements \code{mu} and \code{Sigma} of sizes \code{c(n,length(lambda))} and \code{c(nrow(Psi),ncol(Psi),n)}.
 }
 \description{
-Generates random draws from a Normal-Inverse-Wishart (NIW) distribution.
-Can be used to compare prior to posterior parameter distributions.
+Generates random draws from a Normal-Inverse-Wishart (NIW) distribution. Can be used to compare prior to posterior parameter distributions.
 }
 \details{
 The NIW distribution \eqn{p(\mu, \Sigma | \lambda, \kappa, \Psi, \nu)} is defined as
-\deqn{\Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Sigma/\kappa).}
+\deqn{
+\Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Sigma/\kappa).
+}
 }
 \examples{
 d <- 4 # number of dimensions
@@ -44,10 +45,10 @@ S <- apply(niw.sim$Sigma, 3, function(M) diag(solve(M)))
 ii <- 2
 const <- solve(Psi)[ii,ii]
 hist(S[ii,], breaks = 100, freq = FALSE,
-    main = parse(text = paste0("\\"Histogram of \\"*(Sigma^{-1})[", ii,ii,"]")),
-    xlab = parse(text = paste0("(Sigma^{-1})[", ii,ii,"]")))
+     main = parse(text = paste0("\\"Histogram of \\"*(Sigma^{-1})[", ii,ii,"]")),
+     xlab = parse(text = paste0("(Sigma^{-1})[", ii,ii,"]")))
 curve(dchisq(x/const, df = nu)/const,
-     from = min(S[ii,]), to = max(S[ii,]), col = "red", add = TRUE)
+      from = min(S[ii,]), to = max(S[ii,]), col = "red", add = TRUE)
 
 # elements of mu have a t-distribution
 mu <- niw.sim$mu
@@ -55,8 +56,8 @@ mu <- niw.sim$mu
 ii <- 4
 const <- sqrt(Psi[ii,ii]/(kappa*(nu-d+1)))
 hist(mu[,ii], breaks = 100, freq = FALSE,
-    main = parse(text = paste0("\\"Histogram of \\"*mu[", ii, "]")),
-    xlab = parse(text = paste0("mu[", ii, "]")))
+     main = parse(text = paste0("\\"Histogram of \\"*mu[", ii, "]")),
+     xlab = parse(text = paste0("mu[", ii, "]")))
 curve(dt((x-lambda[ii])/const, df = nu-d+1)/const, add = TRUE, col = "red")
 }
 \seealso{
