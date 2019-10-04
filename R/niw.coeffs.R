@@ -26,7 +26,12 @@ niw.coeffs <- function(X, lambda, kappa, Psi, nu) {
   d <- ncol(X)
   N <- nrow(X)
   if(missing(kappa)) kappa <- 0
-  if(missing(Psi)) Psi <- 0
+  if(missing(Psi)) {
+    if(N <= d) {
+      stop("Must have more observations than niche dimensions when prior parameter Psi is missing.")
+    }
+    Psi <- 0
+  }
   if(missing(nu)) nu <- ncol(X)+1
   # sufficient statistics
   Xbar <- colMeans(X)
