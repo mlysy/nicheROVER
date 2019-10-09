@@ -2,8 +2,6 @@
 
 *Martin Lysy, Ashley Stasko, Heidi Swanson*
 
-*October 22, 2018*
-
 ---
 
 ### Description
@@ -21,4 +19,4 @@ devtools::install_github("mlysy/nicheROVER", ref = "master")
 
 ### Usage
 
-A step-by-step walkthrough of a basic analysis is provided in the package [vignette](http://htmlpreview.github.com/?https://github.com/mlysy/nicheROVER/master/inst/doc/ecol-vignette.html).
+A step-by-step walkthrough of a basic analysis is provided in the package [vignette](http://htmlpreview.github.com/?https://github.com/mlysy/nicheROVER/master/doc/ecol-vignette.html).

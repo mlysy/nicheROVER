@@ -47,7 +47,7 @@ niche.par.plot <- function(niche.par, plot.mu = TRUE, plot.Sigma = TRUE, plot.in
                         parse(text = paste0("p(mu[", ii, "]*\" | \"*X)")))
     }
     if(plot.Sigma) {
-      ylab.Sigma <- apply(as.matrix(expand.grid(1:niso, 1:niso))[,2:1], 1, function(II) {
+      ylab.Sigma <- apply(as.matrix(expand.grid(1:niso, 1:niso))[,2:1,drop=FALSE], 1, function(II) {
         paste0(II[1], "*", II[2])
       })
       ylab.Sigma <- sapply(ylab.Sigma, function(ii) {
