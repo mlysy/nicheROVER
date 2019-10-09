@@ -1,7 +1,7 @@
 Package: nicheROVER
 Title: (Niche) (R)egion and Niche (Over)lap Metrics for
         Multidimensional Ecological Niches
-Version: 1.0.0.9000
+Version: 1.0.0.9001
 Date: 2017-12-05
 Authors@R: c(person("Martin", "Lysy", role = c("aut", "cre"),
     email = "mlysy@uwaterloo.ca"),
