@@ -27,9 +27,9 @@ A Monte Carlo estimate of the niche overlap for \code{\link[=overlap.unif]{overl
 Overlap calculation for uniform niche regions.
 }
 \details{
-The overlap between niche regions \eqn{A} and \eqn{B} is defined as \eqn{vol(A \cap B)/vol(A \cup B)}, where the hypervolume of an n-dimensional region \eqn{S \in \mathbb R^n} is \eqn{vol(S) = \int_S dx}.  For elliptical niche regions, there are simple formulas for \eqn{vol(A)} and \eqn{vol(B)}.  Thus, we need only determine the volume of the intersection \eqn{vol(A \cap B)}, as the volume of the union is given by the formula \eqn{vol(A \cup B) = vol(A) + vol(B) - vol(A \cap B)}.
+The overlap between niche regions \eqn{A} and \eqn{B} is defined as \eqn{vol(A \cap B)/vol(A \cup B)}, where the hypervolume of an \eqn{n}-dimensional region \eqn{S} is \eqn{vol(S) = \int_S dx}.  For elliptical niche regions, there are simple formulas for \eqn{vol(A)} and \eqn{vol(B)}.  Thus, we need only determine the volume of the intersection \eqn{vol(A \cap B)}, as the volume of the union is given by the formula \eqn{vol(A \cup B) = vol(A) + vol(B) - vol(A \cap B)}.
 
-For spherical niche regions, \eqn{vol(A \cap B)} has a closed-form expression (see References).  For elliptical regions, no such formula exists and a Monte Carlo method is used instead.  That is, \eqn{vol(A \cap B)} is calculated by sampling uniformly from \eqn{A}, then multiplying \eqn{vol(A)} by the fraction of sampled points which fall into \eqn{B}.
+For spherical niche regions, \eqn{vol(A \cap B)} has a closed-form expression (see 'References').  For elliptical regions, no such formula exists and a Monte Carlo method is used instead.  That is, \eqn{vol(A \cap B)} is calculated by sampling uniformly from \eqn{A}, then multiplying \eqn{vol(A)} by the fraction of sampled points which fall into \eqn{B}.
 
 While the uniform overlap metric is invariant to permutation of niche regions \eqn{A} and \eqn{B}, the accuracy of the Monte Carlo calculation of \eqn{vol(A \cap B)} is not: higher accuracy is obtained when a higher fraction of sampled points are in the opposite niche region.  \code{\link[=overlap.unif]{overlap.unif()}} does not attempt to determine for which region this is the case, though the choice can be informed by plotting the niche regions, e.g., with \code{\link[=niche.plot]{niche.plot()}}.
 }
@@ -60,5 +60,5 @@ overlap.sphere(mA, sigA, mB, sigB)
 overlap.unif(mA, SigA, mB, SigB, nprob = 1e5)
 }
 \references{
-Li, S. "Concise formulas for the area and volume of a hyperspherical cap." \emph{Asian Journal of Mathematics & Statistics} 4.1 (2011): 66-70. \url{http://dx.doi.org/10.3923/ajms.2011.66.70}.
+Li, S. "Concise formulas for the area and volume of a hyperspherical cap." \emph{Asian Journal of Mathematics & Statistics} 4.1 (2011): 66-70. \doi{10.3923/ajms.2011.66.70}.
 }
