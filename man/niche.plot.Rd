@@ -4,8 +4,18 @@
 \alias{niche.plot}
 \title{Plot for 2-d projection of niche regions.}
 \usage{
-niche.plot(niche.par, niche.data, alpha = 0.95, species.names, iso.names,
-  lims, col, ndens = 512, pfrac = 0, xlab)
+niche.plot(
+  niche.par,
+  niche.data,
+  alpha = 0.95,
+  species.names,
+  iso.names,
+  lims,
+  col,
+  ndens = 512,
+  pfrac = 0,
+  xlab
+)
 }
 \arguments{
 \item{niche.par}{a list of length \code{nspecies}, each element of which in turn is a list with elements \code{mu} and \code{Sigma}.  Each of these will correspond to an ellipse being drawn for that species in the corresponding 2-d plane. See Example.}
@@ -52,7 +62,7 @@ fish.data <- tapply(1:nrow(fish), fish$species, function(ii) X = fish[ii,2:4])
 clrs <- c("black", "red", "blue", "orange") # colors for each species
 niche.plot(niche.par = fish.par, niche.data = fish.data, pfrac = .1,
            iso.names = expression(delta^{15}*N, delta^{13}*C, delta^{34}*S),
-           col = clrs, xlab = expression("Isotope Ratio (\\u2030)"))
+           col = clrs, xlab = expression("Isotope Ratio (\u2030)"))
 }
 \references{
 Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." \emph{Ecology: Statistical Reports} 96:2 (2015): 318-324. \url{https://www.ncbi.nlm.nih.gov/pubmed/26240852}.

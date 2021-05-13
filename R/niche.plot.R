@@ -46,7 +46,12 @@ niche.plot <- function(niche.par, niche.data, alpha = .95,
     ell[[ii]] <- ell.tmp
   }
   # plot limits.
-  if(missing(lims)) {
+  if(!missing(lims)) {
+    # check that user didn't specify `col` positionally by mistake
+    if(is.character(lims)) {
+      stop("`lims` argument passed as a character vector.\nDid you mean to specify `col` instead?")
+    }
+  } else {
     # data
     lims <- array(sapply(niche.data, function(x) apply(x, 2, range)),
                   dim = c(2, niso, nspec))

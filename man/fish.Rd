@@ -4,7 +4,9 @@
 \name{fish}
 \alias{fish}
 \title{Fish stable isotope dataset.}
-\format{A data frame with 278 rows (observations) and 4 columns (species, delta^{15}N, delta^{13}C, and delta^{34}S).}
+\format{
+A data frame with 278 rows (observations) and 4 columns (species, delta^{15}N, delta^{13}C, and delta^{34}S).
+}
 \source{
 Fish were collected between 2007 and 2008 from an estuarine area of the Beaufort Sea, North and West of the Mackenzie Delta at Phillips Bay, Yukon Territory, Canada (69.28 N, 138.49 W).
 }

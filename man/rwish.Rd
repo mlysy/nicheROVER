@@ -38,7 +38,7 @@ X <- apply(Sigma, 3, function(S) crossprod(a, S \%*\% a))
 const <- a \%*\% Psi \%*\% a
 
 hist(X, breaks = 100, freq = FALSE,
-     main = parse(text = "\\"Histogram of \\"*X==a*minute*Sigma*a"),
+     main = parse(text = "\"Histogram of \"*X==a*minute*Sigma*a"),
      xlab = parse(text = "X==a*minute*Sigma*a"))
 curve(dchisq(x/const, df = nu)/const,
       from = min(X), to = max(X), col = "red", add = TRUE)

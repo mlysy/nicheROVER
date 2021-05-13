@@ -3,7 +3,6 @@
 \docType{package}
 \name{nicheROVER}
 \alias{nicheROVER}
-\alias{nicheROVER-package}
 \title{(Niche) (R)egion and Niche (Over)lap Metrics for Multidimensional Ecological Niches.}
 \description{
 This package uses a probabilistic method to calculate niche regions and pairwise niche overlap using multidimensional niche indicator data (e.g., stable isotopes, environmental variables, etc.). The niche region is defined as the joint probability density function of the multidimensional niche indicators at a user-defined probability alpha (e.g., 95\%).  Uncertainty is accounted for in a Bayesian framework, and the method can be extended to three or more indicator dimensions.  It provides directional estimates of niche overlap, accounts for species-specific distributions in multivariate niche space, and produces unique and consistent bivariate projections of the multivariate niche region. See Swanson et al. (2014) for a detailed description and worked example below using fish stable isotope data.
@@ -35,7 +34,7 @@ fish.data <- tapply(1:nrow(fish), fish$species, function(ii) X = fish[ii,2:4])
 
 niche.plot(niche.par = fish.par, niche.data = fish.data, pfrac = .05,
            iso.names = expression(delta^{15}*N, delta^{13}*C, delta^{34}*S),
-           col = clrs, xlab = expression("Isotope Ratio (\\u2030)"))
+           col = clrs, xlab = expression("Isotope Ratio (\u2030)"))
 
 # niche overlap plots for 95\% niche region sizes
 

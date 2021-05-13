@@ -45,7 +45,7 @@ S <- apply(niw.sim$Sigma, 3, function(M) diag(solve(M)))
 ii <- 2
 const <- solve(Psi)[ii,ii]
 hist(S[ii,], breaks = 100, freq = FALSE,
-     main = parse(text = paste0("\\"Histogram of \\"*(Sigma^{-1})[", ii,ii,"]")),
+     main = parse(text = paste0("\"Histogram of \"*(Sigma^{-1})[", ii,ii,"]")),
      xlab = parse(text = paste0("(Sigma^{-1})[", ii,ii,"]")))
 curve(dchisq(x/const, df = nu)/const,
       from = min(S[ii,]), to = max(S[ii,]), col = "red", add = TRUE)
@@ -56,7 +56,7 @@ mu <- niw.sim$mu
 ii <- 4
 const <- sqrt(Psi[ii,ii]/(kappa*(nu-d+1)))
 hist(mu[,ii], breaks = 100, freq = FALSE,
-     main = parse(text = paste0("\\"Histogram of \\"*mu[", ii, "]")),
+     main = parse(text = paste0("\"Histogram of \"*mu[", ii, "]")),
      xlab = parse(text = paste0("mu[", ii, "]")))
 curve(dt((x-lambda[ii])/const, df = nu-d+1)/const, add = TRUE, col = "red")
 }

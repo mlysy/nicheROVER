@@ -76,9 +76,9 @@ niche.par.plot(list(siw0, siw1, siw2), col = clrs[1:3],
 abline(v = mu0[ii], col = clrs[4]) # true value of mu
 legend(x = "topright",
        legend = c(parse(text = paste0("pi(mu[", ii, "])")),
-                  parse(text = paste0("p(mu[", ii, "]*\\" | \\"*X)*\\", Informative Prior\\"")),
-                  parse(text = paste0("p(mu[", ii, "]*\\" | \\"*X)*\\", Noninformative Prior\\"")),
-                  parse(text = paste0("\\"True value of \\"*mu[", ii, "]"))),
+                  parse(text = paste0("p(mu[", ii, "]*\" | \"*X)*\", Informative Prior\"")),
+                  parse(text = paste0("p(mu[", ii, "]*\" | \"*X)*\", Noninformative Prior\"")),
+                  parse(text = paste0("\"True value of \"*mu[", ii, "]"))),
        fill = clrs)
 
 # prior and posterior densities of Sigma
@@ -91,10 +91,10 @@ abline(v = Sigma0[ii,jj], col = clrs[4])
 legend(x = "topright",
        legend = c(parse(text = paste0("pi(Sigma[", ii, "*", jj, "])")),
                   parse(text = paste0("p(Sigma[", ii, "*", jj,
-                                      "]*\\" | \\"*X)*\\", Informative Prior\\"")),
+                                      "]*\" | \"*X)*\", Informative Prior\"")),
                   parse(text = paste0("p(Sigma[", ii, "*", jj,
-                                      "]*\\" | \\"*X)*\\", Noninformative Prior\\"")),
-                  parse(text = paste0("\\"True value of \\"*Sigma[", ii, "*", jj, "]"))),
+                                      "]*\" | \"*X)*\", Noninformative Prior\"")),
+                  parse(text = paste0("\"True value of \"*Sigma[", ii, "*", jj, "]"))),
        fill = clrs)
 
 }

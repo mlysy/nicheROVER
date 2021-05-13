@@ -4,8 +4,14 @@
 \alias{overlap}
 \title{Monte Carlo calculation of niche region overlap metrics.}
 \usage{
-overlap(niche.par, nreps, nprob, alpha = 0.95, species.names,
-  norm.redraw = TRUE)
+overlap(
+  niche.par,
+  nreps,
+  nprob,
+  alpha = 0.95,
+  species.names,
+  norm.redraw = TRUE
+)
 }
 \arguments{
 \item{niche.par}{a list with \code{nspecies = length(niche.par)}, each element of which in turn is a list with elements \code{mu} and \code{Sigma}.  See Details.}

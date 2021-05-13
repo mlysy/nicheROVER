@@ -4,8 +4,16 @@
 \alias{overlap.plot}
 \title{Plot the overlap metric.}
 \usage{
-overlap.plot(over.stat, nbreaks = 50, equal.axis = FALSE,
-  species.names, col, mean.cred = TRUE, mean.cred.col = "green", xlab)
+overlap.plot(
+  over.stat,
+  nbreaks = 50,
+  equal.axis = FALSE,
+  species.names,
+  col,
+  mean.cred = TRUE,
+  mean.cred.col = "green",
+  xlab
+)
 }
 \arguments{
 \item{over.stat}{an array with \code{dim(over.stat) = c(nspecies, nspecies, nreps)} containing \code{nreps} calculations of the overlap metric for each pair of species. See Details.}
