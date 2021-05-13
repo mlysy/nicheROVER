@@ -1,25 +1,25 @@
 #' Posterior coefficients of the Normal-Inverse-Wishart distribution with its conjugate prior.
 #'
-#' Given iid \eqn{d}-dimensional niche indicators \eqn{X = (X_1,\ldots,X_N)} with \eqn{X_i \sim N(\mu, \Sigma)}, this function calculates the coefficients of the Normal-Inverse-Wishart (NIW) posterior \eqn{p(\mu, \Sigma | X)} for a conjugate NIW prior.  Together with \code{\link{niw.mom}}, this can be used to rapidly compute the point estimates \eqn{E[\mu | X]} and \eqn{E[\Sigma | X]}.
+#' Given iid \eqn{d}-dimensional niche indicators \eqn{X = (X_1,\ldots,X_N)} with \eqn{X_i \sim N(\mu, \Sigma)}, this function calculates the coefficients of the Normal-Inverse-Wishart (NIW) posterior \eqn{p(\mu, \Sigma | X)} for a conjugate NIW prior.  Together with [niw.mom()], this can be used to rapidly compute the point estimates \eqn{E[\mu | X]} and \eqn{E[\Sigma | X]}.
 #'
 #' @details The NIW distribution \eqn{p(\mu, \Sigma | \lambda, \kappa, \Psi, \nu)} is defined as
 #' \deqn{
 #' \Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Sigma/\kappa).
 #' }
-#' The default value \code{kappa = 0} uses the Lebesque prior on \eqn{\mu}: \eqn{p(\mu) \propto 1}.
+#' The default value `kappa = 0` uses the Lebesque prior on \eqn{\mu}: \eqn{p(\mu) \propto 1}.
 #'
-#' The default value \code{Psi = 0} uses the scale-invariant prior on \eqn{\Sigma}: \eqn{p(\Sigma) \propto |\Sigma|^{-(\nu+d+1)/2}}.
+#' The default value `Psi = 0` uses the scale-invariant prior on \eqn{\Sigma}: \eqn{p(\Sigma) \propto |\Sigma|^{-(\nu+d+1)/2}}.
 #'
-#' The default value \code{nu = ncol(X)+1} for \code{kappa = 0} and \code{Psi = 0} makes \eqn{E[\mu|X]=\code{colMeans(X)}} and \eqn{E[\Sigma | X]=\code{var(X)}}.
+#' The default value `nu = ncol(X)+1` for `kappa = 0` and `Psi = 0` makes \eqn{E[\mu|X]=`colMeans(X)`} and \eqn{E[\Sigma | X]=`var(X)`}.
 #'
 #' @param X a data matrix with observations along the rows.
 #' @param lambda location parameter. See Details.
-#' @param kappa scale parameter. Defaults to \code{kappa = 0}.  See Details.
-#' @param Psi scale matrix. Defaults to \code{Psi = 0}.  See Details.
-#' @param nu degrees of freedom. Defaults to \code{nu = ncol(X)+1}.  See Details.
+#' @param kappa scale parameter. Defaults to `kappa = 0`.  See Details.
+#' @param Psi scale matrix. Defaults to `Psi = 0`.  See Details.
+#' @param nu degrees of freedom. Defaults to `nu = ncol(X)+1`.  See Details.
 #'
-#' @return Returns a list with elements \code{lambda}, \code{kappa}, \code{Psi}, \code{nu} corresponding to the coefficients of the NIW posterior distribution \eqn{p(\mu, \Sigma | X)}.
-#' @seealso \code{\link{rniw}}, \code{\link{niw.mom}}, \code{\link{niw.post}}.
+#' @return Returns a list with elements `lambda`, `kappa`, `Psi`, `nu` corresponding to the coefficients of the NIW posterior distribution \eqn{p(\mu, \Sigma | X)}.
+#' @seealso [rniw()], [niw.mom()], [niw.post()].
 #' @example examples/niw.coeffs.R
 #' @export
 niw.coeffs <- function(X, lambda, kappa, Psi, nu) {

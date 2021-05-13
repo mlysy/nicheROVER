@@ -69,5 +69,5 @@ niche.par.plot(fish.par, col = clrs, plot.mu = TRUE, plot.Sigma = TRUE)
 legend("topright", legend = names(fish.par), fill = clrs)
 }
 \seealso{
-\code{\link{niw.post}}, \code{\link{niiw.post}} for niche parameter output, \code{density} in the \code{R} \code{base} package for density estimation from sample data.
+\code{\link[=niw.post]{niw.post()}}, \code{\link[=niiw.post]{niiw.post()}} for niche parameter output, \code{\link[stats:density]{stats::density()}} for density estimation from sample data.
 }

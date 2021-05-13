@@ -44,5 +44,5 @@ curve(dchisq(x/const, df = nu)/const,
       from = min(X), to = max(X), col = "red", add = TRUE)
 }
 \seealso{
-\code{\link{rniw}}
+\code{\link[=rniw]{rniw()}}
 }

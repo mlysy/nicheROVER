@@ -2,14 +2,14 @@
 #'
 #' Generates a random samples from a Wishart distribution defined as \eqn{W(\Psi, \nu)}, or an Inverse-Wishart distribution defined as \eqn{W^{-1}(\Psi, \nu)}.
 #'
-#' @details Setting \code{inv = TRUE} replaces \eqn{\Psi} by \eqn{Psi^{-1}} and inverts the output random matrices, such that they are being generated from an Inverse-Wishart \eqn{W^{-1}(\Psi, \nu)} distribution.
+#' @details Setting `inv = TRUE` replaces \eqn{\Psi} by \eqn{Psi^{-1}} and inverts the output random matrices, such that they are being generated from an Inverse-Wishart \eqn{W^{-1}(\Psi, \nu)} distribution.
 #'
 #' @param n number of samples to draw.
 #' @param Psi scale matrix.
 #' @param nu degrees of freedom.
-#' @param inv logical. Setting \code{inv = TRUE} returns random matrices from an Inverse-Wishart distribution. See Details.
-#' @seealso \code{\link{rniw}}
-#' @return Returns an array of Wishart (or Inverse-Wishart) draws of size \code{c(nrow(Psi),ncol(Psi),n)}.
+#' @param inv logical. Setting `inv = TRUE` returns random matrices from an Inverse-Wishart distribution. See Details.
+#' @seealso [rniw()]
+#' @return Returns an array of Wishart (or Inverse-Wishart) draws of size `c(nrow(Psi),ncol(Psi),n)`.
 #' @example examples/rwish.R
 #' @export
 rwish <- function(n, Psi, nu, inv = FALSE) {

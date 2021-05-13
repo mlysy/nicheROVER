@@ -61,5 +61,5 @@ hist(mu[,ii], breaks = 100, freq = FALSE,
 curve(dt((x-lambda[ii])/const, df = nu-d+1)/const, add = TRUE, col = "red")
 }
 \seealso{
-\code{\link{rwish}}, \code{\link{niw.mom}}, \code{\link{niw.coeffs}}.
+\code{\link[=rwish]{rwish()}}, \code{\link[=niw.mom]{niw.mom()}}, \code{\link[=niw.coeffs]{niw.coeffs()}}.
 }

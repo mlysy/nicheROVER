@@ -2,7 +2,7 @@
 #'
 #' Calculates coordinates of points for plotting a 2-dimensional ellipse based on user-defined parameters. Can be used for exploratory data analysis to produce ellipses at a given niche region size (e.g., \eqn{\alpha = 95\%}).
 #'
-#' @details This function provides the coordinates needed to plot a 2-dimensional ellipse based on user-defined parameters, such that \code{X = c(x,y)} satisfies the equation
+#' @details This function provides the coordinates needed to plot a 2-dimensional ellipse based on user-defined parameters, such that `X = c(x,y)` satisfies the equation
 #' \deqn{
 #' (X-\mu)' V^{-1} (X-\mu) = C,
 #' }
@@ -12,8 +12,8 @@
 #' @param V scale of ellipse. A 2x2 matrix. See Details.
 #' @param alpha niche region size. See Details.
 #' @param n number of points to return for plotting.
-#' @return Returns a matrix of coordinates \code{cbind(x,y)} to plot a 2-dimensional ellipse.
-#' @seealso \code{\link{niche.plot}}
+#' @return Returns a matrix of coordinates `cbind(x,y)` to plot a 2-dimensional ellipse.
+#' @seealso [niche.plot()] for plotting.
 #'
 #' @example examples/ellipse.R
 #' @export

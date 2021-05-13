@@ -21,7 +21,7 @@ niw.coeffs(X, lambda, kappa, Psi, nu)
 Returns a list with elements \code{lambda}, \code{kappa}, \code{Psi}, \code{nu} corresponding to the coefficients of the NIW posterior distribution \eqn{p(\mu, \Sigma | X)}.
 }
 \description{
-Given iid \eqn{d}-dimensional niche indicators \eqn{X = (X_1,\ldots,X_N)} with \eqn{X_i \sim N(\mu, \Sigma)}, this function calculates the coefficients of the Normal-Inverse-Wishart (NIW) posterior \eqn{p(\mu, \Sigma | X)} for a conjugate NIW prior.  Together with \code{\link{niw.mom}}, this can be used to rapidly compute the point estimates \eqn{E[\mu | X]} and \eqn{E[\Sigma | X]}.
+Given iid \eqn{d}-dimensional niche indicators \eqn{X = (X_1,\ldots,X_N)} with \eqn{X_i \sim N(\mu, \Sigma)}, this function calculates the coefficients of the Normal-Inverse-Wishart (NIW) posterior \eqn{p(\mu, \Sigma | X)} for a conjugate NIW prior.  Together with \code{\link[=niw.mom]{niw.mom()}}, this can be used to rapidly compute the point estimates \eqn{E[\mu | X]} and \eqn{E[\Sigma | X]}.
 }
 \details{
 The NIW distribution \eqn{p(\mu, \Sigma | \lambda, \kappa, \Psi, \nu)} is defined as
@@ -32,7 +32,7 @@ The default value \code{kappa = 0} uses the Lebesque prior on \eqn{\mu}: \eqn{p(
 
 The default value \code{Psi = 0} uses the scale-invariant prior on \eqn{\Sigma}: \eqn{p(\Sigma) \propto |\Sigma|^{-(\nu+d+1)/2}}.
 
-The default value \code{nu = ncol(X)+1} for \code{kappa = 0} and \code{Psi = 0} makes \eqn{E[\mu|X]=\code{colMeans(X)}} and \eqn{E[\Sigma | X]=\code{var(X)}}.
+The default value \code{nu = ncol(X)+1} for \code{kappa = 0} and \code{Psi = 0} makes \eqn{E[\mu|X]=`colMeans(X)`} and \eqn{E[\Sigma | X]=`var(X)`}.
 }
 \examples{
 # NIW prior coefficients
@@ -57,5 +57,5 @@ mu.est <- rbind(prior = niw.mom(lambda, kappa, Psi, nu)$mu$mean,
 round(mu.est, 2)
 }
 \seealso{
-\code{\link{rniw}}, \code{\link{niw.mom}}, \code{\link{niw.post}}.
+\code{\link[=rniw]{rniw()}}, \code{\link[=niw.mom]{niw.mom()}}, \code{\link[=niw.post]{niw.post()}}.
 }

@@ -19,10 +19,10 @@ A dataset containing values for three stable isotopes measured in the muscle tis
 \details{
 This dataset contains delta^{15}N, delta^{13}C, and delta^{34}S values for the following fish species:
 \itemize{
-  \item ARCS - Arctic Cisco (\emph{Coregonus autumnalis}), n = 69
-  \item BDWF - Broad Whitefish (\emph{Coregonus nasus}), n = 71
-  \item LKWF - Lake Whitefish (\emph{Coregonus clupeaformis}), n = 67
-  \item LSCS - Least Cisco (\emph{Coregonus sardinella}), n = 70
+\item ARCS - Arctic Cisco (\emph{Coregonus autumnalis}), n = 69
+\item BDWF - Broad Whitefish (\emph{Coregonus nasus}), n = 71
+\item LKWF - Lake Whitefish (\emph{Coregonus clupeaformis}), n = 67
+\item LSCS - Least Cisco (\emph{Coregonus sardinella}), n = 70
 }
 }
 \examples{

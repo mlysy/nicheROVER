@@ -53,5 +53,5 @@ c(true = niw.mV$var[II[1],II[2],JJ[1],JJ[2]],
   sim = cov(niw.sim$Sigma[II[1],II[2],], niw.sim$Sigma[JJ[1],JJ[2],]))
 }
 \seealso{
-\code{\link{rniw}}, \code{\link{niw.coeffs}}, \code{\link{niw.post}}.
+\code{\link[=rniw]{rniw()}}, \code{\link[=niw.coeffs]{niw.coeffs()}}, \code{\link[=niw.post]{niw.post()}}.
 }

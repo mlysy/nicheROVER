@@ -13,9 +13,9 @@
 #' @param Psi scale matrix.  See Details
 #' @param nu degrees of freedom.  See Details.
 #'
-#' @return Returns a list with elements \code{mu} and \code{Sigma}, each containing lists with elements \code{mean} and \code{var}.  For \code{mu} these elements are of size \code{length(lambda)} and \code{c(length(lambda),length(lambda))}.  For \code{Sigma} they are of size \code{dim(Psi)} and \code{c(dim(Psi), dim(Psi))}, such that cov\eqn{(\Sigma_{ij}, \Sigma_{kl})=}\code{Sigma$var[i,j,k,l]}.
+#' @return Returns a list with elements `mu` and `Sigma`, each containing lists with elements `mean` and `var`.  For `mu` these elements are of size `length(lambda)` and `c(length(lambda),length(lambda))`.  For `Sigma` they are of size `dim(Psi)` and `c(dim(Psi), dim(Psi))`, such that cov\eqn{(\Sigma_{ij}, \Sigma_{kl})=}`Sigma$var[i,j,k,l]`.
 #'
-#' @seealso \code{\link{rniw}}, \code{\link{niw.coeffs}}, \code{\link{niw.post}}.
+#' @seealso [rniw()], [niw.coeffs()], [niw.post()].
 #' @example examples/niw.mom.R
 #' @export
 niw.mom <- function(lambda, kappa, Psi, nu) {

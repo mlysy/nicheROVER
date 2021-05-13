@@ -21,7 +21,7 @@ niiw.post(nsamples, X, lambda, Omega, Psi, nu, mu0 = lambda, burn)
 
 \item{mu0}{initial value of mu to start the Gibbs sampler.  See Details.}
 
-\item{burn}{burn-in for the MCMC sampling algorithm.  Either an integer giving the number of initial samples to discard, or a fraction with \code{0 < burn < 1}.  Defaults to \code{burn = floor(nsamples/10)}.}
+\item{burn}{burn-in for the MCMC sampling algorithm.  Either an integer giving the number of initial samples to discard, or a fraction with \verb{0 < burn < 1}.  Defaults to \code{burn = floor(nsamples/10)}.}
 }
 \value{
 Returns a list with elements \code{mu} and \code{Sigma} of sizes \code{c(nsamples, length(lambda))} and \code{c(dim(Psi), nsamples)}.
@@ -34,11 +34,11 @@ The NIIW distribution \eqn{p(\mu, \Sigma | \lambda, \kappa, \Psi, \nu)} is defin
 \deqn{
 \Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Omega).
 }
-The default value \code{Omega = 0} uses the Lebesque prior on \eqn{\mu}: \eqn{p(\mu) \propto 1}.  In this case the NIW and NIIW priors produce identical resuls, but \code{\link{niw.post}} is faster.
+The default value \code{Omega = 0} uses the Lebesque prior on \eqn{\mu}: \eqn{p(\mu) \propto 1}.  In this case the NIW and NIIW priors produce identical resuls, but \code{\link[=niw.post]{niw.post()}} is faster.
 
 The default value \code{Psi = 0} uses the scale-invariant prior on \eqn{\Sigma}: \eqn{p(\Sigma) \propto |\Sigma|^{-(\nu+d+1)/2}}.
 
-The default value \code{nu = ncol(X)+1} for \code{Omega = 0} and \code{Psi = 0} makes \eqn{E[\mu|X]=\code{colMeans(X)}} and \eqn{E[\Sigma | X]=\code{var(X)}}.
+The default value \code{nu = ncol(X)+1} for \code{Omega = 0} and \code{Psi = 0} makes \eqn{E[\mu|X]=`colMeans(X)`} and \eqn{E[\Sigma | X]=`var(X)`}.
 
 Random draws are obtained by a Markov chain Monte Carlo (MCMC) algorithm; specifically, a Gibbs sampler alternates between draws from \eqn{p(\mu | \Sigma, X)} and \eqn{p(\Sigma | \mu, X)}, which are Normal and Inverse-Wishart distributions respectively.
 }
@@ -86,5 +86,5 @@ niche.par.plot(list(siiw, siw), col = clrs, plot.mu = FALSE, plot.Sigma = TRUE)
 legend(x = "topright", legend = c("NIIW Prior", "NIW Prior"), fill = clrs)
 }
 \seealso{
-\code{\link{niw.post}}, \code{\link{rwish}}.
+\code{\link[=niw.post]{niw.post()}}, \code{\link[=rwish]{rwish()}}.
 }

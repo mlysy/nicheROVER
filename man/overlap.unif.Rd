@@ -21,7 +21,7 @@ overlap.sphere(muA, sigmaA, muB, sigmaB, alphaA = 0.95, alphaB = 0.95)
 \item{sigmaA, sigmaB}{standard deviations (scalars) of spherical niche regions.}
 }
 \value{
-A Monte Carlo estimate of the niche overlap for \code{overlap.unif}, and an analytic calcuation for \code{overlap.sphere}.
+A Monte Carlo estimate of the niche overlap for \code{\link[=overlap.unif]{overlap.unif()}}, and an analytic calcuation for \code{\link[=overlap.sphere]{overlap.sphere()}}.
 }
 \description{
 Overlap calculation for uniform niche regions.
@@ -31,7 +31,7 @@ The overlap between niche regions \eqn{A} and \eqn{B} is defined as \eqn{vol(A \
 
 For spherical niche regions, \eqn{vol(A \cap B)} has a closed-form expression (see References).  For elliptical regions, no such formula exists and a Monte Carlo method is used instead.  That is, \eqn{vol(A \cap B)} is calculated by sampling uniformly from \eqn{A}, then multiplying \eqn{vol(A)} by the fraction of sampled points which fall into \eqn{B}.
 
-While the uniform overlap metric is invariant to permutation of niche regions \eqn{A} and \eqn{B}, the accuracy of the Monte Carlo calculation of \eqn{vol(A \cap B)} is not: higher accuracy is obtained when a higher fraction of sampled points are in the opposite niche region.  \code{overlap.unif} does not attempt to determine for which region this is the case, though the choice can be informed by plotting the niche regions, e.g., with \code{\link{niche.plot}}.
+While the uniform overlap metric is invariant to permutation of niche regions \eqn{A} and \eqn{B}, the accuracy of the Monte Carlo calculation of \eqn{vol(A \cap B)} is not: higher accuracy is obtained when a higher fraction of sampled points are in the opposite niche region.  \code{\link[=overlap.unif]{overlap.unif()}} does not attempt to determine for which region this is the case, though the choice can be informed by plotting the niche regions, e.g., with \code{\link[=niche.plot]{niche.plot()}}.
 }
 \examples{
 # spherical case: compare Monte Carlo method to analytic formula

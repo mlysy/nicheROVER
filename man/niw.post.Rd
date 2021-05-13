@@ -99,5 +99,5 @@ legend(x = "topright",
 
 }
 \seealso{
-\code{\link{rniw}}, \code{\link{niiw.post}}.
+\code{\link[=rniw]{rniw()}}, \code{\link[=niiw.post]{niiw.post()}}.
 }

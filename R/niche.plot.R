@@ -4,20 +4,20 @@
 #'
 #' @details A set of plots is created for each pairwise combination of niche indicators.  Below the diagonal are scatterplots for each species, above the diagonal are ellipses corresponding to 2-d projections of the probabilistic niche regions.  The diagonal displays density estimates for each indicator, and optionally the raw 1-d data.  See Swanson et al. (2015) for detailed description of the probabilistic niche region.
 #'
-#' @param niche.par a list of length \code{nspecies}, each element of which in turn is a list with elements \code{mu} and \code{Sigma}.  Each of these will correspond to an ellipse being drawn for that species in the corresponding 2-d plane. See Example.
+#' @param niche.par a list of length `nspecies`, each element of which in turn is a list with elements `mu` and `Sigma`.  Each of these will correspond to an ellipse being drawn for that species in the corresponding 2-d plane. See Example.
 #'
-#' @param niche.data a list of length \code{nspecies}, each element of which is a matrix with observations along the rows and niche indicators (e.g., stable isotopes) along the columns.
+#' @param niche.data a list of length `nspecies`, each element of which is a matrix with observations along the rows and niche indicators (e.g., stable isotopes) along the columns.
 #' @param alpha size of the niche region to plot. Defaults to 0.95.
-#' @param species.names names of the species. Defaults to \code{names(niche.par)}.
-#' @param iso.names names of the niche indicators (or isotopes) to plot. Defaults to \code{colnames(niche.par)}.
+#' @param species.names names of the species. Defaults to `names(niche.par)`.
+#' @param iso.names names of the niche indicators (or isotopes) to plot. Defaults to `colnames(niche.par)`.
 #' @param lims two-row matrix of range limits for each niche indicator.  Defaults to include all ellipses.
 #' @param col vector of colours in which each species will be drawn.
 #' @param ndens number of points at which to evaluate kernel density estimates.
-#' @param pfrac fraction of the plot on which to display 1-dimensional raw niche indicator data. \code{pfrac = 0} means don't display the raw data in 1-d.
+#' @param pfrac fraction of the plot on which to display 1-dimensional raw niche indicator data. `pfrac = 0` means don't display the raw data in 1-d.
 #' @param xlab title of plot, located on the bottom.  Defaults to no title.
 #' @return Returns a series of plots displaying niche indicator data and their probabilistic niche projections.
-#' @references Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." \emph{Ecology: Statistical Reports} 96:2 (2015): 318-324. \url{https://www.ncbi.nlm.nih.gov/pubmed/26240852}.
-#' @seealso \code{\link{overlap.plot}}, \code{\link{niw.post}}, \code{\link{niiw.post}}.
+#' @references Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." *Ecology: Statistical Reports* 96:2 (2015): 318-324. <https://www.ncbi.nlm.nih.gov/pubmed/26240852>.
+#' @seealso [overlap.plot()], [niw.post()], [niiw.post()].
 #' @example examples/niche.plot.R
 #' @export
 niche.plot <- function(niche.par, niche.data, alpha = .95,

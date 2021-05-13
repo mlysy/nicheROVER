@@ -36,5 +36,5 @@ plot(ell.pts, col = rainbow(110)[1:100], type = "o")
 points(mu[1], mu[2], pch = "+")
 }
 \seealso{
-\code{\link{niche.plot}}
+\code{\link[=niche.plot]{niche.plot()}} for plotting.
 }

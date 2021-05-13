@@ -6,24 +6,24 @@
 #' \deqn{
 #' \Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Omega).
 #' }
-#' The default value \code{Omega = 0} uses the Lebesque prior on \eqn{\mu}: \eqn{p(\mu) \propto 1}.  In this case the NIW and NIIW priors produce identical resuls, but \code{\link{niw.post}} is faster.
+#' The default value `Omega = 0` uses the Lebesque prior on \eqn{\mu}: \eqn{p(\mu) \propto 1}.  In this case the NIW and NIIW priors produce identical resuls, but [niw.post()] is faster.
 #'
-#' The default value \code{Psi = 0} uses the scale-invariant prior on \eqn{\Sigma}: \eqn{p(\Sigma) \propto |\Sigma|^{-(\nu+d+1)/2}}.
+#' The default value `Psi = 0` uses the scale-invariant prior on \eqn{\Sigma}: \eqn{p(\Sigma) \propto |\Sigma|^{-(\nu+d+1)/2}}.
 #'
-#' The default value \code{nu = ncol(X)+1} for \code{Omega = 0} and \code{Psi = 0} makes \eqn{E[\mu|X]=\code{colMeans(X)}} and \eqn{E[\Sigma | X]=\code{var(X)}}.
+#' The default value `nu = ncol(X)+1` for `Omega = 0` and `Psi = 0` makes \eqn{E[\mu|X]=`colMeans(X)`} and \eqn{E[\Sigma | X]=`var(X)`}.
 #'
 #' Random draws are obtained by a Markov chain Monte Carlo (MCMC) algorithm; specifically, a Gibbs sampler alternates between draws from \eqn{p(\mu | \Sigma, X)} and \eqn{p(\Sigma | \mu, X)}, which are Normal and Inverse-Wishart distributions respectively.
 #'
 #' @param nsamples the number of posterior draws.
 #' @param X a data matrix with observations along the rows.
 #' @param lambda mean of mu. See Details.
-#' @param Omega variance of mu. Defaults to \code{Omega = 0}.  See Details.
-#' @param Psi scale matrix of Sigma. Defaults to \code{Psi = 0}.  See Details.
-#' @param nu degrees of freedom of Sigma. Defaults to \code{nu = ncol(X)+1}.  See Details.
+#' @param Omega variance of mu. Defaults to `Omega = 0`.  See Details.
+#' @param Psi scale matrix of Sigma. Defaults to `Psi = 0`.  See Details.
+#' @param nu degrees of freedom of Sigma. Defaults to `nu = ncol(X)+1`.  See Details.
 #' @param mu0 initial value of mu to start the Gibbs sampler.  See Details.
-#' @param burn burn-in for the MCMC sampling algorithm.  Either an integer giving the number of initial samples to discard, or a fraction with \code{0 < burn < 1}.  Defaults to \code{burn = floor(nsamples/10)}.
-#' @return Returns a list with elements \code{mu} and \code{Sigma} of sizes \code{c(nsamples, length(lambda))} and \code{c(dim(Psi), nsamples)}.
-#' @seealso \code{\link{niw.post}}, \code{\link{rwish}}.
+#' @param burn burn-in for the MCMC sampling algorithm.  Either an integer giving the number of initial samples to discard, or a fraction with `0 < burn < 1`.  Defaults to `burn = floor(nsamples/10)`.
+#' @return Returns a list with elements `mu` and `Sigma` of sizes `c(nsamples, length(lambda))` and `c(dim(Psi), nsamples)`.
+#' @seealso [niw.post()], [rwish()].
 #' @example examples/niiw.post.R
 #' @export
 niiw.post <- function(nsamples, X, lambda, Omega, Psi, nu, mu0 = lambda, burn) {

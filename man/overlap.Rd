@@ -69,5 +69,5 @@ round(over.cred[,,,1]) # display alpha = .95 niche region
 Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." \emph{Ecology: Statistical Reports} 96:2 (2015): 318-324. \url{https://www.ncbi.nlm.nih.gov/pubmed/26240852}.
 }
 \seealso{
-\code{\link{overlap.plot}}, \code{\link{niw.post}}, \code{\link{niiw.post}}.
+\code{\link[=overlap.plot]{overlap.plot()}}, \code{\link[=niw.post]{niw.post()}}, \code{\link[=niiw.post]{niiw.post()}}.
 }

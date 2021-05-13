@@ -39,7 +39,7 @@ Returns a series of histograms illustrating the probability of pairwise species 
 Plots the posterior distribution of the niche region overlap metric calculated for each pairwise combination of species.
 }
 \details{
-This function uses the overlap metric information in \code{over.stat} calculated by \code{\link{overlap}} to create 2-dimensional plots of interspecific niche region overlap.
+This function uses the overlap metric information in \code{over.stat} calculated by \code{\link[=overlap]{overlap()}} to create 2-dimensional plots of interspecific niche region overlap.
 }
 \examples{
 # fish data
@@ -67,5 +67,5 @@ overlap.plot(over[,,,ii], col = clrs, mean.cred.col = "turquoise",
                            dimnames(over)[[4]][ii]))
 }
 \seealso{
-\code{\link{overlap}}, \code{\link{niw.post}}, \code{\link{niiw.post}}.
+\code{\link[=overlap]{overlap()}}, \code{\link[=niw.post]{niw.post()}}, \code{\link[=niiw.post]{niiw.post()}}.
 }

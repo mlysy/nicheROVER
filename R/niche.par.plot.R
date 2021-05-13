@@ -2,18 +2,18 @@
 #'
 #' For one or more species, plots some or all of the niche parameters \eqn{\mu} and \eqn{\Sigma}.
 #'
-#' @param niche.par list with \code{nspecies = length(niche.par)}, each element of which is a list with parameters \code{mu} and \code{Sigma}.  See Details.
-#' @param plot.mu logical.  If \code{TRUE}, plot the distribution of \eqn{\mu} for each niche indicator (e.g., stable isotope).  See Details.
-#' @param plot.Sigma logical.  If \code{TRUE}, plot the distribution of \eqn{\Sigma} for each niche indicator.  See Details.
-#' @param plot.index either a scalar of a numeric vector of length 2.  If \code{plot.index = i} then plot the distribution of \eqn{\mu_i}.  If \code{plot.index = c(i,j)} then plot the distribution of \eqn{\Sigma_{ij}}.
+#' @param niche.par list with `nspecies = length(niche.par)`, each element of which is a list with parameters `mu` and `Sigma`.  See Details.
+#' @param plot.mu logical.  If `TRUE`, plot the distribution of \eqn{\mu} for each niche indicator (e.g., stable isotope).  See Details.
+#' @param plot.Sigma logical.  If `TRUE`, plot the distribution of \eqn{\Sigma} for each niche indicator.  See Details.
+#' @param plot.index either a scalar of a numeric vector of length 2.  If `plot.index = i` then plot the distribution of \eqn{\mu_i}.  If `plot.index = c(i,j)` then plot the distribution of \eqn{\Sigma_{ij}}.
 #' @param col vector of colors in which to plot each species.
 #' @param ndens number of points at which to evaluate density estimates.
 #' @param ylab optional label for \eqn{y}-axis.  If missing, defaults to \eqn{p(\mu_i | X)} and \eqn{p(\Sigma_{ij} | X)}.
 #'@return Returns a plot of the distribution of some or all niche parameters.
 #'
-#' @details \code{niche.par} is a list, each element of which is a distribution of niche parameters.  That is, \code{names(niche.par[[1]]) = c("mu", "Sigma")}, and if \code{niso} is the number of niche indicators (e.g., stable isotopes), then \code{dim(niche.par[[1]]$mu) = c(nsamples, niso)} and \code{dim(niche.par[[1]]$Sigma) = c(niso, niso, nsamples)}.
+#' @details `niche.par` is a list, each element of which is a distribution of niche parameters.  That is, `names(niche.par[[1]]) = c("mu", "Sigma")`, and if `niso` is the number of niche indicators (e.g., stable isotopes), then `dim(niche.par[[1]]$mu) = c(nsamples, niso)` and `dim(niche.par[[1]]$Sigma) = c(niso, niso, nsamples)`.
 #'
-#' @seealso \code{\link{niw.post}}, \code{\link{niiw.post}} for niche parameter output, \code{density} in the \code{R} \code{base} package for density estimation from sample data.
+#' @seealso [niw.post()], [niiw.post()] for niche parameter output, [stats::density()] for density estimation from sample data.
 #'
 #' @example examples/niche.par.plot.R
 #' @export

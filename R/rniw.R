@@ -12,10 +12,10 @@
 #' @param kappa scale parameter. See Details.
 #' @param Psi scale matrix.  See Details
 #' @param nu degrees of freedom.  See Details.
-#' @return Returns a list with elements \code{mu} and \code{Sigma} of sizes \code{c(n,length(lambda))} and \code{c(nrow(Psi),ncol(Psi),n)}.
+#' @return Returns a list with elements `mu` and `Sigma` of sizes `c(n,length(lambda))` and `c(nrow(Psi),ncol(Psi),n)`.
 #'
 #' @example examples/rniw.R
-#' @seealso \code{\link{rwish}}, \code{\link{niw.mom}}, \code{\link{niw.coeffs}}.
+#' @seealso [rwish()], [niw.mom()], [niw.coeffs()].
 #' @export
 rniw <- function(n, lambda, kappa, Psi, nu) {
   d <- length(lambda)

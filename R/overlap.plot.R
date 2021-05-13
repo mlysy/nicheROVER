@@ -2,18 +2,18 @@
 #'
 #' Plots the posterior distribution of the niche region overlap metric calculated for each pairwise combination of species.
 #'
-#' @details This function uses the overlap metric information in \code{over.stat} calculated by \code{\link{overlap}} to create 2-dimensional plots of interspecific niche region overlap.
+#' @details This function uses the overlap metric information in `over.stat` calculated by [overlap()] to create 2-dimensional plots of interspecific niche region overlap.
 #'
-#' @param over.stat an array with \code{dim(over.stat) = c(nspecies, nspecies, nreps)} containing \code{nreps} calculations of the overlap metric for each pair of species. See Details.
+#' @param over.stat an array with `dim(over.stat) = c(nspecies, nspecies, nreps)` containing `nreps` calculations of the overlap metric for each pair of species. See Details.
 #' @param nbreaks number of breaks in the histogram. Defaults to 50.
-#' @param equal.axis logical. If \code{TRUE}, all histograms in a given column of the output (corresponding to different Species \eqn{A} for the same Species \eqn{B}) are plotted on the same range.
-#' @param species.names a vector of species names. Defaults to \code{dimnames(over.stat)[[1]]}.
+#' @param equal.axis logical. If `TRUE`, all histograms in a given column of the output (corresponding to different Species \eqn{A} for the same Species \eqn{B}) are plotted on the same range.
+#' @param species.names a vector of species names. Defaults to `dimnames(over.stat)[[1]]`.
 #' @param col a vector of the colours in which each species will be drawn.
-#' @param mean.cred logical. If \code{TRUE}, vertical lines for mean and 95\% credible intervals will be included in the historgram of each overlap metric.
+#' @param mean.cred logical. If `TRUE`, vertical lines for mean and 95% credible intervals will be included in the historgram of each overlap metric.
 #' @param mean.cred.col colour of the mean and credible interval lines in the histogram.
 #' @param xlab optional plot title, located on the bottom.  Default is no title.
 #'
-#' @seealso \code{\link{overlap}}, \code{\link{niw.post}}, \code{\link{niiw.post}}.
+#' @seealso [overlap()], [niw.post()], [niiw.post()].
 #' @return Returns a series of histograms illustrating the probability of pairwise species overlap.
 #'
 #' @example examples/overlap.plot.R
