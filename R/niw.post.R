@@ -11,12 +11,12 @@
 #' The default value `Psi = 0` uses the scale-invariant prior on \eqn{\Sigma}: \eqn{p(\Sigma) \propto |\Sigma|^{-(\nu+d+1)/2}}.
 #'
 #' The default value `nu = ncol(X)+1` for `kappa = 0` and `Psi = 0` makes \eqn{E[\mu|X]=\code{colMeans(X)}} and \eqn{E[\Sigma | X]=\code{var(X)}}.
-#' @param nsamples the number of posterior draws.
-#' @param X a data matrix with observations along the rows.
-#' @param lambda location parameter. See Details.
-#' @param kappa scale parameter. Defaults to `kappa = 0`.  See Details.
-#' @param Psi scale matrix. Defaults to `Psi = 0`.  See Details.
-#' @param nu degrees of freedom. Defaults to `nu = ncol(X)+1`.  See Details.
+#' @param nsamples The number of posterior draws.
+#' @param X A data matrix with observations along the rows.
+#' @param lambda Location parameter. See 'Details'.
+#' @param kappa Scale parameter. Defaults to `kappa = 0`.  See 'Details'.
+#' @param Psi Scale matrix. Defaults to `Psi = 0`.  See Details.
+#' @param nu Degrees of freedom. Defaults to `nu = ncol(X)+1`.  See Details.
 #' @return Returns a list with elements `mu` and `Sigma` of sizes `c(nsamples, length(lambda))` and `c(dim(Psi), nsamples)`.
 #' @seealso [rniw()], [niiw.post()].
 #' @example examples/niw.post.R

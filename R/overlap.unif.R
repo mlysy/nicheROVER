@@ -6,11 +6,11 @@
 #'
 #' While the uniform overlap metric is invariant to permutation of niche regions \eqn{A} and \eqn{B}, the accuracy of the Monte Carlo calculation of \eqn{vol(A \cap B)} is not: higher accuracy is obtained when a higher fraction of sampled points are in the opposite niche region.  [overlap.unif()] does not attempt to determine for which region this is the case, though the choice can be informed by plotting the niche regions, e.g., with [niche.plot()].
 #'
-#' @param muA,muB mean of niche regions.
-#' @param SigmaA,SigmaB variance matrix of elliptical niche regions.
-#' @param alphaA,alphaB probabilistic size of niche regions.
-#' @param nprob number of uniform draws from niche region `A`.
-#' @return A Monte Carlo estimate of the niche overlap for [overlap.unif()], and an analytic calcuation for [overlap.sphere()].
+#' @param muA,muB Mean of niche regions.
+#' @param SigmaA,SigmaB Variance matrix of elliptical niche regions.
+#' @param alphaA,alphaB Probabilistic size of niche regions.
+#' @param nprob Number of uniform draws from niche region `A`.
+#' @return A Monte Carlo estimate of the niche overlap for [overlap.unif()], and an analytic calculation for [overlap.sphere()].
 #' @name overlap.unif
 #' @example examples/overlap.unif.R
 #' @export

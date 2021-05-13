@@ -7,13 +7,13 @@
 rwish(n, Psi, nu, inv = FALSE)
 }
 \arguments{
-\item{n}{number of samples to draw.}
+\item{n}{Number of samples to draw.}
 
-\item{Psi}{scale matrix.}
+\item{Psi}{Scale matrix.}
 
-\item{nu}{degrees of freedom.}
+\item{nu}{Degrees of freedom.}
 
-\item{inv}{logical. Setting \code{inv = TRUE} returns random matrices from an Inverse-Wishart distribution. See Details.}
+\item{inv}{Logical. Setting \code{inv = TRUE} returns random matrices from an Inverse-Wishart distribution. See 'Details'.}
 }
 \value{
 Returns an array of Wishart (or Inverse-Wishart) draws of size \code{c(nrow(Psi),ncol(Psi),n)}.

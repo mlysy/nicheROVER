@@ -7,17 +7,17 @@
 niw.post(nsamples, X, lambda, kappa, Psi, nu)
 }
 \arguments{
-\item{nsamples}{the number of posterior draws.}
+\item{nsamples}{The number of posterior draws.}
 
-\item{X}{a data matrix with observations along the rows.}
+\item{X}{A data matrix with observations along the rows.}
 
-\item{lambda}{location parameter. See Details.}
+\item{lambda}{Location parameter. See 'Details'.}
 
-\item{kappa}{scale parameter. Defaults to \code{kappa = 0}.  See Details.}
+\item{kappa}{Scale parameter. Defaults to \code{kappa = 0}.  See 'Details'.}
 
-\item{Psi}{scale matrix. Defaults to \code{Psi = 0}.  See Details.}
+\item{Psi}{Scale matrix. Defaults to \code{Psi = 0}.  See Details.}
 
-\item{nu}{degrees of freedom. Defaults to \code{nu = ncol(X)+1}.  See Details.}
+\item{nu}{Degrees of freedom. Defaults to \code{nu = ncol(X)+1}.  See Details.}
 }
 \value{
 Returns a list with elements \code{mu} and \code{Sigma} of sizes \code{c(nsamples, length(lambda))} and \code{c(dim(Psi), nsamples)}.

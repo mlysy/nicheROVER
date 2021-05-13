@@ -15,19 +15,19 @@ niche.par.plot(
 )
 }
 \arguments{
-\item{niche.par}{list with \code{nspecies = length(niche.par)}, each element of which is a list with parameters \code{mu} and \code{Sigma}.  See Details.}
+\item{niche.par}{List with \code{nspecies = length(niche.par)}, each element of which is a list with parameters \code{mu} and \code{Sigma}.  See 'Details'.}
 
-\item{plot.mu}{logical.  If \code{TRUE}, plot the distribution of \eqn{\mu} for each niche indicator (e.g., stable isotope).  See Details.}
+\item{plot.mu}{Logical.  If \code{TRUE}, plot the distribution of \eqn{\mu} for each niche indicator (e.g., stable isotope).  See 'Details'.}
 
-\item{plot.Sigma}{logical.  If \code{TRUE}, plot the distribution of \eqn{\Sigma} for each niche indicator.  See Details.}
+\item{plot.Sigma}{Logical.  If \code{TRUE}, plot the distribution of \eqn{\Sigma} for each niche indicator.  See 'Details'.}
 
-\item{plot.index}{either a scalar of a numeric vector of length 2.  If \code{plot.index = i} then plot the distribution of \eqn{\mu_i}.  If \code{plot.index = c(i,j)} then plot the distribution of \eqn{\Sigma_{ij}}.}
+\item{plot.index}{Either a scalar of a numeric vector of length 2.  If \code{plot.index = i} then plot the distribution of \eqn{\mu_i}.  If \code{plot.index = c(i,j)} then plot the distribution of \eqn{\Sigma_{ij}}.}
 
-\item{col}{vector of colors in which to plot each species.}
+\item{col}{Vector of colors in which to plot each species.}
 
-\item{ndens}{number of points at which to evaluate density estimates.}
+\item{ndens}{Number of points at which to evaluate density estimates.}
 
-\item{ylab}{optional label for \eqn{y}-axis.  If missing, defaults to \eqn{p(\mu_i | X)} and \eqn{p(\Sigma_{ij} | X)}.}
+\item{ylab}{Optional label for \eqn{y}-axis.  If missing, defaults to \eqn{p(\mu_i | X)} and \eqn{p(\Sigma_{ij} | X)}.}
 }
 \value{
 Returns a plot of the distribution of some or all niche parameters.
@@ -36,7 +36,7 @@ Returns a plot of the distribution of some or all niche parameters.
 For one or more species, plots some or all of the niche parameters \eqn{\mu} and \eqn{\Sigma}.
 }
 \details{
-\code{niche.par} is a list, each element of which is a distribution of niche parameters.  That is, \code{names(niche.par[[1]]) = c("mu", "Sigma")}, and if \code{niso} is the number of niche indicators (e.g., stable isotopes), then \code{dim(niche.par[[1]]$mu) = c(nsamples, niso)} and \code{dim(niche.par[[1]]$Sigma) = c(niso, niso, nsamples)}.
+Each element of the list \code{niche.par} is a distribution of niche parameters.  That is, \code{names(niche.par[[1]]) = c("mu", "Sigma")}, and if \code{niso} is the number of niche indicators (e.g., stable isotopes), then \code{dim(niche.par[[1]]$mu) = c(nsamples, niso)} and \code{dim(niche.par[[1]]$Sigma) = c(niso, niso, nsamples)}.
 }
 \examples{
 # fish data

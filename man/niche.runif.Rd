@@ -2,24 +2,24 @@
 % Please edit documentation in R/niche.runif.R
 \name{niche.runif}
 \alias{niche.runif}
-\title{Uniform sampling from elliptical niche region.}
+\title{Uniform sampling from an elliptical niche region.}
 \usage{
 niche.runif(n, mu, Sigma, alpha = 0.95)
 }
 \arguments{
-\item{n}{number of random draws}
+\item{n}{Number of random draws.}
 
-\item{mu}{mean vector}
+\item{mu}{Mean vector.}
 
-\item{Sigma}{variance matrix}
+\item{Sigma}{Variance matrix.}
 
-\item{alpha}{probabilistic niche size}
+\item{alpha}{Probabilistic niche size}
 }
 \value{
-iid draws from uniform distribution on niche region.
+IID draws from a uniform distribution on the elliptical niche region.
 }
 \description{
-Uniform sampling from elliptical niche region.
+Uniform sampling from an elliptical niche region.
 }
 \examples{
 # 2d example
@@ -28,4 +28,7 @@ V <- crossprod(matrix(rnorm(4),d,d))
 mu <- rnorm(d)
 plot(ellipse(mu, V), type = "l")
 points(niche.runif(1e4, mu, V), col = "brown", pch = ".")
+}
+\seealso{
+\code{\link[=ellipse]{ellipse()}} and \code{\link[=niche.size]{niche.size()}} for the definition of the elliptical niche region.
 }

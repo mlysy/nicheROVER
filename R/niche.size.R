@@ -2,9 +2,9 @@
 #'
 #' @details For a given niche region \eqn{N_R}, the niche size is defined as the hypervolume of this region: \eqn{N_S = \int_{x \in N_R} d x}.
 #'
-#' @param Sigma variance matrix for normally distributed niche axes.
-#' @param alpha probabilistic niche size.
-#' @return hypervolume niche size.
+#' @param Sigma Variance matrix for normally distributed niche axes.
+#' @param alpha Probabilistic niche size.
+#' @return Hypervolume niche size.
 #'
 #' @example examples/niche.size.R
 #'

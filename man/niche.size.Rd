@@ -7,12 +7,12 @@
 niche.size(Sigma, alpha = 0.95)
 }
 \arguments{
-\item{Sigma}{variance matrix for normally distributed niche axes.}
+\item{Sigma}{Variance matrix for normally distributed niche axes.}
 
-\item{alpha}{probabilistic niche size.}
+\item{alpha}{Probabilistic niche size.}
 }
 \value{
-hypervolume niche size.
+Hypervolume niche size.
 }
 \description{
 Calculate the size of an elliptical niche region.

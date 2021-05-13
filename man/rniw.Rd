@@ -7,15 +7,15 @@
 rniw(n, lambda, kappa, Psi, nu)
 }
 \arguments{
-\item{n}{number of samples to draw.}
+\item{n}{Number of samples to draw.}
 
-\item{lambda}{location parameter. See Details.}
+\item{lambda}{Location parameter. See 'Details'.}
 
-\item{kappa}{scale parameter. See Details.}
+\item{kappa}{Scale parameter. See 'Details'.}
 
-\item{Psi}{scale matrix.  See Details}
+\item{Psi}{Scale matrix.  See 'Details'.}
 
-\item{nu}{degrees of freedom.  See Details.}
+\item{nu}{Degrees of freedom.  See 'Details'.}
 }
 \value{
 Returns a list with elements \code{mu} and \code{Sigma} of sizes \code{c(n,length(lambda))} and \code{c(nrow(Psi),ncol(Psi),n)}.

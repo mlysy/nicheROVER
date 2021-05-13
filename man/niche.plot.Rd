@@ -18,25 +18,25 @@ niche.plot(
 )
 }
 \arguments{
-\item{niche.par}{a list of length \code{nspecies}, each element of which in turn is a list with elements \code{mu} and \code{Sigma}.  Each of these will correspond to an ellipse being drawn for that species in the corresponding 2-d plane. See Example.}
+\item{niche.par}{A list of length \code{nspecies}, each element of which in turn is a list with elements \code{mu} and \code{Sigma}.  Each of these will correspond to an ellipse being drawn for that species in the corresponding 2-d plane. See 'Example'.}
 
-\item{niche.data}{a list of length \code{nspecies}, each element of which is a matrix with observations along the rows and niche indicators (e.g., stable isotopes) along the columns.}
+\item{niche.data}{A list of length \code{nspecies}, each element of which is a matrix with observations along the rows and niche indicators (e.g., stable isotopes) along the columns.}
 
-\item{alpha}{size of the niche region to plot. Defaults to 0.95.}
+\item{alpha}{Size of the niche region to plot. Defaults to 0.95.}
 
-\item{species.names}{names of the species. Defaults to \code{names(niche.par)}.}
+\item{species.names}{Names of the species. Defaults to \code{names(niche.par)}.}
 
-\item{iso.names}{names of the niche indicators (or isotopes) to plot. Defaults to \code{colnames(niche.par)}.}
+\item{iso.names}{Names of the niche indicators (or isotopes) to plot. Defaults to \code{colnames(niche.par)}.}
 
-\item{lims}{two-row matrix of range limits for each niche indicator.  Defaults to include all ellipses.}
+\item{lims}{Two-row matrix of range limits for each niche indicator.  Defaults to include all ellipses.}
 
-\item{col}{vector of colours in which each species will be drawn.}
+\item{col}{Vector of colours in which each species will be drawn.}
 
-\item{ndens}{number of points at which to evaluate kernel density estimates.}
+\item{ndens}{Number of points at which to evaluate kernel density estimates.}
 
-\item{pfrac}{fraction of the plot on which to display 1-dimensional raw niche indicator data. \code{pfrac = 0} means don't display the raw data in 1-d.}
+\item{pfrac}{Fraction of the plot on which to display 1-dimensional raw niche indicator data. \code{pfrac = 0} means don't display the raw data in 1-d.}
 
-\item{xlab}{title of plot, located on the bottom.  Defaults to no title.}
+\item{xlab}{Title of plot, located on the bottom.  Defaults to no title.}
 }
 \value{
 Returns a series of plots displaying niche indicator data and their probabilistic niche projections.

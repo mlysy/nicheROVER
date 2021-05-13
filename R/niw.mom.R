@@ -8,10 +8,10 @@
 #' }
 #' Note that cov\eqn{(\mu, \Sigma) = 0}.
 #'
-#' @param lambda location parameter. See Details.
-#' @param kappa scale parameter. See Details.
-#' @param Psi scale matrix.  See Details
-#' @param nu degrees of freedom.  See Details.
+#' @param lambda Location parameter. See 'Details'.
+#' @param kappa Scale parameter. See 'Details'.
+#' @param Psi Scale matrix.  See 'Details'.
+#' @param nu Degrees of freedom.  See 'Details'.
 #'
 #' @return Returns a list with elements `mu` and `Sigma`, each containing lists with elements `mean` and `var`.  For `mu` these elements are of size `length(lambda)` and `c(length(lambda),length(lambda))`.  For `Sigma` they are of size `dim(Psi)` and `c(dim(Psi), dim(Psi))`, such that cov\eqn{(\Sigma_{ij}, \Sigma_{kl})=}`Sigma$var[i,j,k,l]`.
 #'

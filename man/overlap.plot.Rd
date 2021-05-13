@@ -16,21 +16,21 @@ overlap.plot(
 )
 }
 \arguments{
-\item{over.stat}{an array with \code{dim(over.stat) = c(nspecies, nspecies, nreps)} containing \code{nreps} calculations of the overlap metric for each pair of species. See Details.}
+\item{over.stat}{An array with \code{dim(over.stat) = c(nspecies, nspecies, nreps)} containing \code{nreps} calculations of the overlap metric for each pair of species. See 'Details'.}
 
-\item{nbreaks}{number of breaks in the histogram. Defaults to 50.}
+\item{nbreaks}{Number of breaks in the histogram. Defaults to 50.}
 
-\item{equal.axis}{logical. If \code{TRUE}, all histograms in a given column of the output (corresponding to different Species \eqn{A} for the same Species \eqn{B}) are plotted on the same range.}
+\item{equal.axis}{Logical. If \code{TRUE}, all histograms in a given column of the output (corresponding to different Species \eqn{A} for the same Species \eqn{B}) are plotted on the same range.}
 
-\item{species.names}{a vector of species names. Defaults to \code{dimnames(over.stat)[[1]]}.}
+\item{species.names}{A vector of species names. Defaults to \code{dimnames(over.stat)[[1]]}.}
 
-\item{col}{a vector of the colours in which each species will be drawn.}
+\item{col}{A vector of the colours in which each species will be drawn.}
 
-\item{mean.cred}{logical. If \code{TRUE}, vertical lines for mean and 95\% credible intervals will be included in the historgram of each overlap metric.}
+\item{mean.cred}{Logical. If \code{TRUE}, vertical lines for mean and 95\% credible intervals will be included in the historgram of each overlap metric.}
 
-\item{mean.cred.col}{colour of the mean and credible interval lines in the histogram.}
+\item{mean.cred.col}{Colour of the mean and credible interval lines in the histogram.}
 
-\item{xlab}{optional plot title, located on the bottom.  Default is no title.}
+\item{xlab}{Optional plot title, located on the bottom.  Default is no title.}
 }
 \value{
 Returns a series of histograms illustrating the probability of pairwise species overlap.

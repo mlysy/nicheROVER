@@ -8,10 +8,10 @@
 #' }
 #' where \eqn{C=\code{qchisq(alpha, df = 2)}}.
 #'
-#' @param mu centre of ellipse. A vector of length 2.
-#' @param V scale of ellipse. A 2x2 matrix. See Details.
-#' @param alpha niche region size. See Details.
-#' @param n number of points to return for plotting.
+#' @param mu Centre of ellipse. A vector of length 2.
+#' @param V Scale of ellipse. A 2x2 matrix. See 'Details'.
+#' @param alpha Niche region size. See 'Details'.
+#' @param n Number of points to return for plotting.
 #' @return Returns a matrix of coordinates `cbind(x,y)` to plot a 2-dimensional ellipse.
 #' @seealso [niche.plot()] for plotting.
 #'

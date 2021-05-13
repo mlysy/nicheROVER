@@ -14,14 +14,14 @@
 #'
 #' Random draws are obtained by a Markov chain Monte Carlo (MCMC) algorithm; specifically, a Gibbs sampler alternates between draws from \eqn{p(\mu | \Sigma, X)} and \eqn{p(\Sigma | \mu, X)}, which are Normal and Inverse-Wishart distributions respectively.
 #'
-#' @param nsamples the number of posterior draws.
-#' @param X a data matrix with observations along the rows.
-#' @param lambda mean of mu. See Details.
-#' @param Omega variance of mu. Defaults to `Omega = 0`.  See Details.
-#' @param Psi scale matrix of Sigma. Defaults to `Psi = 0`.  See Details.
-#' @param nu degrees of freedom of Sigma. Defaults to `nu = ncol(X)+1`.  See Details.
-#' @param mu0 initial value of mu to start the Gibbs sampler.  See Details.
-#' @param burn burn-in for the MCMC sampling algorithm.  Either an integer giving the number of initial samples to discard, or a fraction with `0 < burn < 1`.  Defaults to `burn = floor(nsamples/10)`.
+#' @param nsamples The number of posterior draws.
+#' @param X A data matrix with observations along the rows.
+#' @param lambda Mean of \eqn{\mu}. See 'Details'.
+#' @param Omega Variance of \eqn{\mu}. Defaults to `Omega = 0`.  See 'Details'.
+#' @param Psi Scale matrix of \eqn{\Sigma}. Defaults to `Psi = 0`.  See 'Details'.
+#' @param nu Degrees of freedom of \eqn{\Sigma}. Defaults to `nu = ncol(X)+1`.  See 'Details'.
+#' @param mu0 Initial value of \eqn{\mu} to start the Gibbs sampler.  See 'Details'.
+#' @param burn Burn-in for the MCMC sampling algorithm.  Either an integer giving the number of initial samples to discard, or a fraction with `0 < burn < 1`.  Defaults to `burn = floor(nsamples/10)`.
 #' @return Returns a list with elements `mu` and `Sigma` of sizes `c(nsamples, length(lambda))` and `c(dim(Psi), nsamples)`.
 #' @seealso [niw.post()], [rwish()].
 #' @example examples/niiw.post.R

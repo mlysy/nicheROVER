@@ -1,11 +1,12 @@
-#' Uniform sampling from elliptical niche region.
+#' Uniform sampling from an elliptical niche region.
 #'
-#' @param n number of random draws
-#' @param mu mean vector
-#' @param Sigma variance matrix
-#' @param alpha probabilistic niche size
-#' @return iid draws from uniform distribution on niche region.
+#' @param n Number of random draws.
+#' @param mu Mean vector.
+#' @param Sigma Variance matrix.
+#' @param alpha Probabilistic niche size
+#' @return IID draws from a uniform distribution on the elliptical niche region.
 #' @example examples/niche.runif.R
+#' @seealso [ellipse()] and [niche.size()] for the definition of the elliptical niche region.
 #' @export
 niche.runif <- function(n, mu, Sigma, alpha = .95) {
   k <- length(mu) # number of dimensions

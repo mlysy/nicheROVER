@@ -10,18 +10,18 @@ overlap.unif(muA, SigmaA, muB, SigmaB, alphaA = 0.95, alphaB = 0.95, nprob)
 overlap.sphere(muA, sigmaA, muB, sigmaB, alphaA = 0.95, alphaB = 0.95)
 }
 \arguments{
-\item{muA, muB}{mean of niche regions.}
+\item{muA, muB}{Mean of niche regions.}
 
-\item{SigmaA, SigmaB}{variance matrix of elliptical niche regions.}
+\item{SigmaA, SigmaB}{Variance matrix of elliptical niche regions.}
 
-\item{alphaA, alphaB}{probabilistic size of niche regions.}
+\item{alphaA, alphaB}{Probabilistic size of niche regions.}
 
-\item{nprob}{number of uniform draws from niche region \code{A}.}
+\item{nprob}{Number of uniform draws from niche region \code{A}.}
 
 \item{sigmaA, sigmaB}{standard deviations (scalars) of spherical niche regions.}
 }
 \value{
-A Monte Carlo estimate of the niche overlap for \code{\link[=overlap.unif]{overlap.unif()}}, and an analytic calcuation for \code{\link[=overlap.sphere]{overlap.sphere()}}.
+A Monte Carlo estimate of the niche overlap for \code{\link[=overlap.unif]{overlap.unif()}}, and an analytic calculation for \code{\link[=overlap.sphere]{overlap.sphere()}}.
 }
 \description{
 Overlap calculation for uniform niche regions.

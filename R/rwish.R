@@ -4,10 +4,10 @@
 #'
 #' @details Setting `inv = TRUE` replaces \eqn{\Psi} by \eqn{Psi^{-1}} and inverts the output random matrices, such that they are being generated from an Inverse-Wishart \eqn{W^{-1}(\Psi, \nu)} distribution.
 #'
-#' @param n number of samples to draw.
-#' @param Psi scale matrix.
-#' @param nu degrees of freedom.
-#' @param inv logical. Setting `inv = TRUE` returns random matrices from an Inverse-Wishart distribution. See Details.
+#' @param n Number of samples to draw.
+#' @param Psi Scale matrix.
+#' @param nu Degrees of freedom.
+#' @param inv Logical. Setting `inv = TRUE` returns random matrices from an Inverse-Wishart distribution. See 'Details'.
 #' @seealso [rniw()]
 #' @return Returns an array of Wishart (or Inverse-Wishart) draws of size `c(nrow(Psi),ncol(Psi),n)`.
 #' @example examples/rwish.R

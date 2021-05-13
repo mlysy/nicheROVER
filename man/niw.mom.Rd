@@ -7,13 +7,13 @@
 niw.mom(lambda, kappa, Psi, nu)
 }
 \arguments{
-\item{lambda}{location parameter. See Details.}
+\item{lambda}{Location parameter. See 'Details'.}
 
-\item{kappa}{scale parameter. See Details.}
+\item{kappa}{Scale parameter. See 'Details'.}
 
-\item{Psi}{scale matrix.  See Details}
+\item{Psi}{Scale matrix.  See 'Details'.}
 
-\item{nu}{degrees of freedom.  See Details.}
+\item{nu}{Degrees of freedom.  See 'Details'.}
 }
 \value{
 Returns a list with elements \code{mu} and \code{Sigma}, each containing lists with elements \code{mean} and \code{var}.  For \code{mu} these elements are of size \code{length(lambda)} and \code{c(length(lambda),length(lambda))}.  For \code{Sigma} they are of size \code{dim(Psi)} and \code{c(dim(Psi), dim(Psi))}, such that cov\eqn{(\Sigma_{ij}, \Sigma_{kl})=}\code{Sigma$var[i,j,k,l]}.

@@ -7,11 +7,11 @@
 #' \Sigma \sim W^{-1}(\Psi, \nu), \quad \mu | \Sigma \sim N(\lambda, \Sigma/\kappa).
 #' }
 #'
-#' @param n number of samples to draw.
-#' @param lambda location parameter. See Details.
-#' @param kappa scale parameter. See Details.
-#' @param Psi scale matrix.  See Details
-#' @param nu degrees of freedom.  See Details.
+#' @param n Number of samples to draw.
+#' @param lambda Location parameter. See 'Details'.
+#' @param kappa Scale parameter. See 'Details'.
+#' @param Psi Scale matrix.  See 'Details'.
+#' @param nu Degrees of freedom.  See 'Details'.
 #' @return Returns a list with elements `mu` and `Sigma` of sizes `c(n,length(lambda))` and `c(nrow(Psi),ncol(Psi),n)`.
 #'
 #' @example examples/rniw.R

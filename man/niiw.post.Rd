@@ -7,21 +7,21 @@
 niiw.post(nsamples, X, lambda, Omega, Psi, nu, mu0 = lambda, burn)
 }
 \arguments{
-\item{nsamples}{the number of posterior draws.}
+\item{nsamples}{The number of posterior draws.}
 
-\item{X}{a data matrix with observations along the rows.}
+\item{X}{A data matrix with observations along the rows.}
 
-\item{lambda}{mean of mu. See Details.}
+\item{lambda}{Mean of \eqn{\mu}. See 'Details'.}
 
-\item{Omega}{variance of mu. Defaults to \code{Omega = 0}.  See Details.}
+\item{Omega}{Variance of \eqn{\mu}. Defaults to \code{Omega = 0}.  See 'Details'.}
 
-\item{Psi}{scale matrix of Sigma. Defaults to \code{Psi = 0}.  See Details.}
+\item{Psi}{Scale matrix of \eqn{\Sigma}. Defaults to \code{Psi = 0}.  See 'Details'.}
 
-\item{nu}{degrees of freedom of Sigma. Defaults to \code{nu = ncol(X)+1}.  See Details.}
+\item{nu}{Degrees of freedom of \eqn{\Sigma}. Defaults to \code{nu = ncol(X)+1}.  See 'Details'.}
 
-\item{mu0}{initial value of mu to start the Gibbs sampler.  See Details.}
+\item{mu0}{Initial value of \eqn{\mu} to start the Gibbs sampler.  See 'Details'.}
 
-\item{burn}{burn-in for the MCMC sampling algorithm.  Either an integer giving the number of initial samples to discard, or a fraction with \verb{0 < burn < 1}.  Defaults to \code{burn = floor(nsamples/10)}.}
+\item{burn}{Burn-in for the MCMC sampling algorithm.  Either an integer giving the number of initial samples to discard, or a fraction with \verb{0 < burn < 1}.  Defaults to \code{burn = floor(nsamples/10)}.}
 }
 \value{
 Returns a list with elements \code{mu} and \code{Sigma} of sizes \code{c(nsamples, length(lambda))} and \code{c(dim(Psi), nsamples)}.

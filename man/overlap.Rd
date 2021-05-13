@@ -14,17 +14,17 @@ overlap(
 )
 }
 \arguments{
-\item{niche.par}{a list with \code{nspecies = length(niche.par)}, each element of which in turn is a list with elements \code{mu} and \code{Sigma}.  See Details.}
+\item{niche.par}{A list with \code{nspecies = length(niche.par)}, each element of which in turn is a list with elements \code{mu} and \code{Sigma}.  See Details.}
 
-\item{nreps}{the number of overlap metric calculations for each species.  Defaults to the smallest number of parameter samples supplied by \code{niche.par}.  See Details.}
+\item{nreps}{The number of overlap metric calculations for each species.  Defaults to the smallest number of parameter samples supplied by \code{niche.par}.  See 'Details'.}
 
-\item{nprob}{the number of normal draws for each Monte Carlo overlap metric calculation.  See Details.}
+\item{nprob}{The number of normal draws for each Monte Carlo overlap metric calculation.  See 'Details'.}
 
-\item{alpha}{scalar or vector of niche region sizes for calculating the niche overlap metric. Defaults to 0.95.}
+\item{alpha}{Scalar or vector of niche region sizes for calculating the niche overlap metric. Defaults to 0.95.}
 
-\item{species.names}{names of the species. Defaults to \code{names(niche.par)}.}
+\item{species.names}{Names of the species. Defaults to \code{names(niche.par)}.}
 
-\item{norm.redraw}{logical. If \code{FALSE}, the same \code{nprob*nspecies} iid \eqn{N(0,1)} draws are used for each calculation of the overlap metric. This increases the Monte Carlo error, but the procedure is about 1.5x faster.  Defaults to \code{TRUE}.}
+\item{norm.redraw}{Logical. If \code{FALSE}, the same \code{nprob*nspecies} iid \eqn{N(0,1)} draws are used for each calculation of the overlap metric. This increases the Monte Carlo error, but the procedure is about 1.5x faster.  Defaults to \code{TRUE}.}
 }
 \value{
 Returns an array of size \code{c(nspecies, nspecies, nreps, nlevels)}, where \code{nlevels} is the number of alpha levels at which to calculate the overlap metric.  For each of the last two dimensions of the output array, the first two dimensions form an \code{nspecies} by \code{nspecies} matrix giving each pairwise calculation of overlap metric between two species for given \eqn{\Theta_A}, \eqn{\Theta_B}, and \code{alpha}. In each of these matrices, Species \eqn{A} is along the rows of this matrix and Species \eqn{B} is along the columns.

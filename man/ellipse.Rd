@@ -7,13 +7,13 @@
 ellipse(mu, V, alpha = 0.95, n = 100)
 }
 \arguments{
-\item{mu}{centre of ellipse. A vector of length 2.}
+\item{mu}{Centre of ellipse. A vector of length 2.}
 
-\item{V}{scale of ellipse. A 2x2 matrix. See Details.}
+\item{V}{Scale of ellipse. A 2x2 matrix. See 'Details'.}
 
-\item{alpha}{niche region size. See Details.}
+\item{alpha}{Niche region size. See 'Details'.}
 
-\item{n}{number of points to return for plotting.}
+\item{n}{Number of points to return for plotting.}
 }
 \value{
 Returns a matrix of coordinates \code{cbind(x,y)} to plot a 2-dimensional ellipse.

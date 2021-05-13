@@ -7,15 +7,15 @@
 niw.coeffs(X, lambda, kappa, Psi, nu)
 }
 \arguments{
-\item{X}{a data matrix with observations along the rows.}
+\item{X}{A data matrix with observations along the rows.}
 
-\item{lambda}{location parameter. See Details.}
+\item{lambda}{Location parameter. See 'Details'.}
 
-\item{kappa}{scale parameter. Defaults to \code{kappa = 0}.  See Details.}
+\item{kappa}{Scale parameter. Defaults to \code{kappa = 0}.  See 'Details'.}
 
-\item{Psi}{scale matrix. Defaults to \code{Psi = 0}.  See Details.}
+\item{Psi}{Scale matrix. Defaults to \code{Psi = 0}.  See 'Details'.}
 
-\item{nu}{degrees of freedom. Defaults to \code{nu = ncol(X)+1}.  See Details.}
+\item{nu}{Degrees of freedom. Defaults to \code{nu = ncol(X)+1}.  See 'Details'.}
 }
 \value{
 Returns a list with elements \code{lambda}, \code{kappa}, \code{Psi}, \code{nu} corresponding to the coefficients of the NIW posterior distribution \eqn{p(\mu, \Sigma | X)}.
