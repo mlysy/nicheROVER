@@ -10,9 +10,9 @@ This **R** package uses a probabilistic method to calculate niche regions and pa
 
 ### Installation
 
-The CRAN version is available [here](https://CRAN.R-project.org/package=nicheROVER).
+The CRAN version (1.1.0) is available [here](https://CRAN.R-project.org/package=nicheROVER).
 
-For the more recent GitHub version (in particular, including niche size calculations), first install the **R** package [**`devtools`**](https://CRAN.R-project.org/package=devtools), then run
+For the GitHub development version, first install the **R** package [**`devtools`**](https://CRAN.R-project.org/package=devtools), then run
 ```{r}
 devtools::install_github("mlysy/nicheROVER", ref = "master")
 ```
