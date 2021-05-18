@@ -16,7 +16,7 @@
 #' @param norm.redraw Logical. If `FALSE`, the same `nprob*nspecies` iid \eqn{N(0,1)} draws are used for each calculation of the overlap metric. This increases the Monte Carlo error, but the procedure is about 1.5x faster.  Defaults to `TRUE`.
 #' @return Returns an array of size `c(nspecies, nspecies, nreps, nlevels)`, where `nlevels` is the number of alpha levels at which to calculate the overlap metric.  For each of the last two dimensions of the output array, the first two dimensions form an `nspecies` by `nspecies` matrix giving each pairwise calculation of overlap metric between two species for given \eqn{\Theta_A}, \eqn{\Theta_B}, and `alpha`. In each of these matrices, Species \eqn{A} is along the rows of this matrix and Species \eqn{B} is along the columns.
 #'
-#' @references Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." *Ecology: Statistical Reports* 96:2 (2015): 318-324. <https://www.ncbi.nlm.nih.gov/pubmed/26240852>.
+#' @references Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." *Ecology: Statistical Reports* 96:2 (2015): 318-324. \doi{10.1890/14-0235.1}.
 #' @seealso [overlap.plot()], [niw.post()], [niiw.post()].
 #' @example examples/overlap.R
 #' @export

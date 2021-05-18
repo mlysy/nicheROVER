@@ -16,7 +16,7 @@
 #' @param pfrac Fraction of the plot on which to display 1-dimensional raw niche indicator data. `pfrac = 0` means don't display the raw data in 1-d.
 #' @param xlab Title of plot, located on the bottom.  Defaults to no title.
 #' @return Returns a series of plots displaying niche indicator data and their probabilistic niche projections.
-#' @references Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." *Ecology: Statistical Reports* 96:2 (2015): 318-324. <https://www.ncbi.nlm.nih.gov/pubmed/26240852>.
+#' @references Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." *Ecology: Statistical Reports* 96:2 (2015): 318-324. \doi{10.1890/14-0235.1}.
 #' @seealso [overlap.plot()], [niw.post()], [niiw.post()].
 #' @example examples/niche.plot.R
 #' @export

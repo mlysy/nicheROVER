@@ -2,7 +2,7 @@
 #'
 #' This package uses a probabilistic method to calculate niche regions and pairwise niche overlap using multidimensional niche indicator data (e.g., stable isotopes, environmental variables, etc.). The niche region is defined as the joint probability density function of the multidimensional niche indicators at a user-defined probability alpha (e.g., 95%).  Uncertainty is accounted for in a Bayesian framework, and the method can be extended to three or more indicator dimensions.  It provides directional estimates of niche overlap, accounts for species-specific distributions in multivariate niche space, and produces unique and consistent bivariate projections of the multivariate niche region. See Swanson et al. (2014) for a detailed description and worked example below using fish stable isotope data.
 #'
-#' @references Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." *Ecology: Statistical Reports* 96:2 (2015): 318-324. <https://www.ncbi.nlm.nih.gov/pubmed/26240852>.
+#' @references Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." *Ecology: Statistical Reports* 96:2 (2015): 318-324. \doi{10.1890/14-0235.1}.
 #'
 #' @example examples/nicheROVER-package.R
 #'

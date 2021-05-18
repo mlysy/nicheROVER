@@ -48,5 +48,5 @@ overlap.plot(over.stat, col = clrs, mean.cred.col = "turquoise",
              xlab = "Overlap Probability (\%) -- Niche Region Size: 95\%")
 }
 \references{
-Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." \emph{Ecology: Statistical Reports} 96:2 (2015): 318-324. \url{https://www.ncbi.nlm.nih.gov/pubmed/26240852}.
+Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." \emph{Ecology: Statistical Reports} 96:2 (2015): 318-324. \doi{10.1890/14-0235.1}.
 }
