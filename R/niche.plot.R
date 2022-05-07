@@ -15,6 +15,7 @@
 #' @param ndens Number of points at which to evaluate kernel density estimates.
 #' @param pfrac Fraction of the plot on which to display 1-dimensional raw niche indicator data. `pfrac = 0` means don't display the raw data in 1-d.
 #' @param xlab Title of plot, located on the bottom.  Defaults to no title.
+#' @param legend.omit Logical. If TRUE, default legend will be omited.
 #' @return Returns a series of plots displaying niche indicator data and their probabilistic niche projections.
 #' @references Swanson, H.K., Lysy, M., Stasko, A.D., Power, M., Johnson, J.D., and Reist, J.D. "A new probabilistic method for quantifying n-dimensional ecological niches and niche overlap." *Ecology: Statistical Reports* 96:2 (2015): 318-324. \doi{10.1890/14-0235.1}.
 #' @seealso [overlap.plot()], [niw.post()], [niiw.post()].
@@ -22,7 +23,7 @@
 #' @export
 niche.plot <- function(niche.par, niche.data, alpha = .95,
                        species.names, iso.names, lims,
-                       col, ndens = 512, pfrac = 0, xlab) {
+                       col, ndens = 512, pfrac = 0, xlab, legend.omit=F) {
   niso <- ncol(niche.par[[1]]$mu)
   nspec <- length(niche.par)
   npts <- 100 # number of points for each ellipse
@@ -115,7 +116,7 @@ niche.plot <- function(niche.par, niche.data, alpha = .95,
   if(!missing(xlab)) {
     mtext(text = xlab, side = 1, outer = TRUE, line = 2.2, cex = .9)
   }
-  legend(x = "topleft", legend = species.names, fill = col, bty = "n", cex = 1.25)
+  if(!legend.omit) legend(x = "topleft", legend = species.names, fill = col, bty = "n", cex = 1.25)
   par(opar) # reset par
 }
 
