@@ -6,9 +6,7 @@
 #'
 #' @example examples/nicheROVER-package.R
 #'
-#' @docType package
 #' @importFrom graphics abline axis box hist legend lines mtext par plot plot.new plot.window points segments text
 #' @importFrom stats density pbeta qchisq quantile rbeta rchisq rnorm
 #' @importFrom utils combn
-#' @name nicheROVER
-NULL
+"_PACKAGE"

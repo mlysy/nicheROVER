@@ -1,12 +1,14 @@
 Package: nicheROVER
-Title: (Niche) (R)egion and Niche (Over)lap Metrics for Multidimensional Ecological Niches
-Version: 1.1.0
-Date: 2021-05-14
+Title: Niche Region and Niche Overlap Metrics for Multidimensional Ecological Niches
+Version: 1.1.1
+Date: 2021-06-03
 Authors@R: c(person("Martin", "Lysy", role = c("aut", "cre"),
                     email = "mlysy@uwaterloo.ca"),
              person("Ashley D.", "Stasko", role = "aut"),
              person("Heidi K.", "Swanson", role = "aut"))
-Description: Implementation of a probabilistic method to calculate niche regions and pairwise niche overlap using multidimensional niche indicator data (e.g., stable isotopes, environmental variables, etc.). The niche region is defined as the joint probability density function of the multidimensional niche indicators at a user-defined probability alpha (e.g., 95%).  Uncertainty is accounted for in a Bayesian framework, and the method can be extended to three or more indicator dimensions.  It provides directional estimates of niche overlap, accounts for species-specific distributions in multivariate niche space, and produces unique and consistent bivariate projections of the multivariate niche region.  The article by Swanson et al. (Ecology, 2015) provides a detailed description of the methodology.  See the package vignette for a worked example using fish stable isotope data.
+Description: Implementation of a probabilistic method to calculate 'nicheROVER' (_niche_ _r_egion and niche _over_lap) metrics using multidimensional niche indicator data (e.g., stable isotopes, environmental variables, etc.). The niche region is defined as the joint probability density function of the multidimensional niche indicators at a user-defined probability alpha (e.g., 95%).  Uncertainty is accounted for in a Bayesian framework, and the method can be extended to three or more indicator dimensions.  It provides directional estimates of niche overlap, accounts for species-specific distributions in multivariate niche space, and produces unique and consistent bivariate projections of the multivariate niche region.  The article by Swanson et al. (2015) <doi:10.1890/14-0235.1> provides a detailed description of the methodology.  See the package vignette for a worked example using fish stable isotope data.
+URL: https://github.com/mlysy/nicheROVER
+BugReports: https://github.com/mlysy/nicheROVER/issues
 Depends: R (>= 1.9.0)
 Imports: graphics, stats, utils
 Suggests: knitr, rmarkdown
@@ -14,5 +16,5 @@ VignetteBuilder: knitr
 License: GPL-3
 LazyData: true
 Encoding: UTF-8
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
