@@ -35,7 +35,7 @@ fish.data <- tapply(1:nrow(fish), fish$species, function(ii) X = fish[ii,2:4])
 
 niche.plot(niche.par = fish.par, niche.data = fish.data, pfrac = .05,
            iso.names = expression(delta^{15}*N, delta^{13}*C, delta^{34}*S),
-           col = clrs, xlab = expression("Isotope Ratio (\u2030)"))
+           col = clrs, xlab = expression("Isotope Ratio (per mille)"))
 
 # niche overlap plots for 95\% niche region sizes
 

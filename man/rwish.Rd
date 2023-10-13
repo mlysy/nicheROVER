@@ -35,7 +35,7 @@ Sigma <- rwish(n, Psi, nu)
 # for any vector a, X = (a' Sigma a) has a const * chi^2 distribution
 a <- rnorm(d)
 X <- apply(Sigma, 3, function(S) crossprod(a, S \%*\% a))
-const <- a \%*\% Psi \%*\% a
+const <- c(a \%*\% Psi \%*\% a)
 
 hist(X, breaks = 100, freq = FALSE,
      main = parse(text = "\"Histogram of \"*X==a*minute*Sigma*a"),
