@@ -8,6 +8,3 @@
 vignettes/.build.timestamp
 doc
 Meta
-
-# unignore html files in doc
-!doc
