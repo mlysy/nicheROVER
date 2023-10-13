@@ -14,7 +14,8 @@ niche.plot(
   col,
   ndens = 512,
   pfrac = 0,
-  xlab
+  xlab,
+  legend = TRUE
 )
 }
 \arguments{
@@ -37,6 +38,8 @@ niche.plot(
 \item{pfrac}{Fraction of the plot on which to display 1-dimensional raw niche indicator data. \code{pfrac = 0} means don't display the raw data in 1-d.}
 
 \item{xlab}{Title of plot, located on the bottom.  Defaults to no title.}
+
+\item{legend}{Whether or not to add a legend.  Defaults to \code{TRUE}.}
 }
 \value{
 Returns a series of plots displaying niche indicator data and their probabilistic niche projections.
