@@ -12,4 +12,4 @@ fish.data <- tapply(1:nrow(fish), fish$species, function(ii) X = fish[ii,2:4])
 clrs <- c("black", "red", "blue", "orange") # colors for each species
 niche.plot(niche.par = fish.par, niche.data = fish.data, pfrac = .1,
            iso.names = expression(delta^{15}*N, delta^{13}*C, delta^{34}*S),
-           col = clrs, xlab = expression("Isotope Ratio (\u2030)"))
+           col = clrs, xlab = expression("Isotope Ratio (per mille)"))
