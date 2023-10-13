@@ -1,7 +1,7 @@
 Package: nicheROVER
 Title: Niche Region and Niche Overlap Metrics for Multidimensional Ecological Niches
-Version: 1.1.1
-Date: 2021-06-03
+Version: 1.1.2
+Date: 2023-10-12
 Authors@R: c(person("Martin", "Lysy", role = c("aut", "cre"),
                     email = "mlysy@uwaterloo.ca"),
              person("Ashley D.", "Stasko", role = "aut"),
